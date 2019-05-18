@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Uptown FANK</title>
+</head>
+<body>
+    <div class="containter" id="whole">
+            <div class="outer">
+                    <div class="middle">
+                      <div class="inner">
+                            <form>
+                            <div class="form-group">
+                                <label for="txtEmail">Email address</label>
+                                <input type="email" class="form-control" id="txtEmail" aria-describedby="emailHelp" placeholder="Enter email">
+                            </div>
+                            <div class="form-group">
+                                <label for="txtPassword">Password</label>
+                                <input type="password" class="form-control" id="txtPassword" placeholder="Password">
+                            </div>
+                            <div class="form-group">
+                                <label for="txtName">Name</label>
+                                <input type="text" class="form-control" id="txtName" placeholder="Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="txtAddress">Address</label>
+                                <input type="text" class="form-control" id="txtAddress" placeholder="Address">
+                            </div>
+                            <div class="form-group">
+                                <label for="phoneNumber">Phone Number</label>
+                                <input type="tel" class="form-control" id="phoneNumber" placeholder="Phone Number">
+                            </div>
+                            <div class="form-group" id="userSelection">
+                                <label for="userType">User Type</label>
+                                <div class="form-check" id="userType">
+                                    <input class="form-check-input" type="radio" name="userType" id="userType1" value="option1" checked>
+                                    <label class="form-check-label" for="userType1">
+                                       Basic User
+                                    </label>
+                                    </div>
+                                    <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="userType" id="userType2" value="option2">
+                                    <label class="form-check-label" for="userType2">
+                                        Super User
+                                    </label>
+                                    </div>
+                            </div>
+                            <div class="form-group">
+                                    <label for="organization">Organization</label>
+                                    <input type="tel" class="form-control" id="organization" placeholder="Organization">
+                                </div>
+                            <button type="button" class="btn btn-primary" id="btnAuth">Login</button>
+                            <div style="display: flex; justify-content: flex-end">
+                                <button type="button" class="btn btn-link" id="btnAuthAlter">Dont have an account yet, Click here to register!</button>
+                            </div>
+                            </form>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <!--For Bootstrap-->
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script src="main.js"></script>
+</body>
+</html>
