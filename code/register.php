@@ -1,5 +1,5 @@
 <?php
-  include_once('utils/config.php');
+  include('utils/config.php');
 
   $name = $_POST['name'];
   $email = $_POST['email'];

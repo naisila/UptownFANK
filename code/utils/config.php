@@ -4,5 +4,5 @@
   define('DB_PASSWORD','BAlFiBwZ');
   define('DB_NAME','naisila_puka');
 
-  $conn = mysqli_connect(SERVER_ADDRESS, USERNAME, PASSWORD, DATABASE_NAME) or die("Couldn't connect to database: ". mysql_error());
+  $conn = mysqli_connect(HOST_NAME, DB_USERNAME, DB_PASSWORD, DB_NAME) or die("Couldn't connect to database: ". mysql_error());
 ?>
