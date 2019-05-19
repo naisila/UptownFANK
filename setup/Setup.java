@@ -72,24 +72,26 @@ public class Setup
 			DatabaseMetaData meta = conn.getMetaData();
 			stmt = conn.createStatement();
 
-			stmt.executeUpdate("DROP TABLE IF EXISTS Labelling");
-            stmt.executeUpdate("DROP TABLE IF EXISTS Label");
-            stmt.executeUpdate("DROP TABLE IF EXISTS Attachment");
+			//UNTOGGLE THIS PART FOR RESET
+			
+			// stmt.executeUpdate("DROP TABLE IF EXISTS Labelling");
+   //          stmt.executeUpdate("DROP TABLE IF EXISTS Label");
+   //          stmt.executeUpdate("DROP TABLE IF EXISTS Attachment");
 
-            stmt.executeUpdate("DROP TABLE IF EXISTS Item");
-            stmt.executeUpdate("DROP TABLE IF EXISTS CheckList");
-            stmt.executeUpdate("DROP TABLE IF EXISTS PerformsTask");
+   //          stmt.executeUpdate("DROP TABLE IF EXISTS Item");
+   //          stmt.executeUpdate("DROP TABLE IF EXISTS CheckList");
+   //          stmt.executeUpdate("DROP TABLE IF EXISTS PerformsTask");
 
-            stmt.executeUpdate("DROP TABLE IF EXISTS Card");
-            stmt.executeUpdate("DROP TABLE IF EXISTS List");
-            stmt.executeUpdate("DROP TABLE IF EXISTS WorksOn");
+   //          stmt.executeUpdate("DROP TABLE IF EXISTS Card");
+   //          stmt.executeUpdate("DROP TABLE IF EXISTS List");
+   //          stmt.executeUpdate("DROP TABLE IF EXISTS WorksOn");
 
-            stmt.executeUpdate("DROP TABLE IF EXISTS Board");
-            stmt.executeUpdate("DROP TABLE IF EXISTS Member");
-            stmt.executeUpdate("DROP TABLE IF EXISTS Team");
-            stmt.executeUpdate("DROP TABLE IF EXISTS SuperUser");
-            stmt.executeUpdate("DROP TABLE IF EXISTS Phone");
-            stmt.executeUpdate("DROP TABLE IF EXISTS BasicUser");
+   //          stmt.executeUpdate("DROP TABLE IF EXISTS Board");
+   //          stmt.executeUpdate("DROP TABLE IF EXISTS Member");
+   //          stmt.executeUpdate("DROP TABLE IF EXISTS Team");
+   //          stmt.executeUpdate("DROP TABLE IF EXISTS SuperUser");
+   //          stmt.executeUpdate("DROP TABLE IF EXISTS Phone");
+   //          stmt.executeUpdate("DROP TABLE IF EXISTS BasicUser");
 
 	        // Execute Create Table statements
 	        stmt.execute(createBasicUser);
