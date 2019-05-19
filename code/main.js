@@ -11,6 +11,8 @@ const btnAuth = document.getElementById("btnAuth")
 const btnAuthAlter = document.getElementById("btnAuthAlter")
 const loginPage = document.getElementById("loginPage")
 const insidePage = document.getElementById("insidePage")
+const newteam = document.getElementById("submitTeam")
+const teamName = document.getElementById("teamName")
 
 const registerMsg = "Dont have an account yet, Click here to register!"
 const loginMsg = "Already registered, Click here to Login!"
@@ -94,6 +96,23 @@ function login(){
     return true
 }
 
+function register(){
+
+    mName = name.value
+    mEmail = email.value
+    mPassword = password.value
+    mAddress = address.value
+    mPhoneNumber = phone.value
+    mOrganization = organization.value
+
+
+    $.post("register.php",
+    { name: mName, email = mEmail, password = mPassword, address = mAddress, phone = mPhoneNumber, organization = mOrganization},
+    function(response){
+        alert(response);
+	});
+}
+
 
 function hideLoginPage(){
     loginPage.style.display = "none"
@@ -103,4 +122,17 @@ function hideLoginPage(){
 function showLoginPage(){
     insidePage.style.display = "none"
     loginPage.style.display = "block"
+}
+
+newteam.addEventListener("click", function(){
+
+    createTeam(teamName.value)
+
+    $("#NTB").trigger("click")
+    teamName.value = ""
+})
+
+
+function createTeam(teamName){
+
 }

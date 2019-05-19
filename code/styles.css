@@ -51,3 +51,29 @@ margin-right: auto;
 width: 400px;
 /*whatever width you want*/
 }
+
+#logo {
+margin-bottom: 5%;
+}
+
+a.btn-dark, a.btn-danger, a.btn-warning, a.btn-success, a.btn-info{
+margin-right: 10px
+}
+
+.new-table-btn{
+margin-top: 1.5%;
+}
+
+
+.new-table-input{
+margin-bottom: 1.5%;
+}
+
+#menuItemForm, #userInfoForm, #menuItemUpdateForm {
+margin: 3%;
+}
+
+.card {
+margin-top: 2%;
+margin-bottom: 2%;
+}
