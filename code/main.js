@@ -92,15 +92,27 @@ function clearInputs(){
 btnAuth.addEventListener("click", function(e) {
     if(e.target.innerText.includes("Register")){
         console.log("Register clicked")
-        const response = register()
-        if(response.status == "success"){
-            hideLoginPage()
-            gUserId = userId
-            alert("Successfully registered")
-        }
-        else{
-            alert("There was some error with register")
-        }
+        
+        mName = name.value
+        mEmail = email.value
+        mPassword = password.value
+        mAddress = address.value
+        mPhoneNumber = phone.value
+        mOrganization = organization.value
+
+
+        $.post("register.php",
+        { name: mName, email : mEmail, password: mPassword, address: mAddress, phone: mPhoneNumber, organization: mOrganization},
+        function(response){
+            if(response.status == "success"){
+                hideLoginPage()
+                gUserId = userId
+                alert("Successfully registered")
+            }
+            else{
+                alert("There was some error with register")
+            }
+        });
         
     }
     else{
@@ -127,7 +139,7 @@ function login(){
     return returnInfo
 }
 
-function register(){
+/*function register(){
 
     mName = name.value
     mEmail = email.value
@@ -144,6 +156,7 @@ function register(){
     });
     
 }
+*/
 
 function openElement(evt, cityName) {
     var i, tabcontent, tablinks;
