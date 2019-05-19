@@ -183,8 +183,8 @@ function createTeam(teamName, mAffiliation, mKey){
 }
 
 function createTeamCard(teamName, response){
-  name = teamName
-  teamId = response.teamId
+  var name = teamName
+  var teamId = response.teamId
 
   var card = document.createElement("div")
   card.className = "card"
