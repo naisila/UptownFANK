@@ -101,11 +101,40 @@
                                         <div class="accordion" id="accordionTeams">
                                         </div>
                                 </div>
-                                <div class="tab-pane" id="Profile" role="tabpanel" aria-labelledby="profile-tab"></div>
+                                <div class="tab-pane" id="Profile" role="tabpanel" aria-labelledby="profile-tab">
+                                    <div class="wrapper fade-in">
+                                    <h1>Profile </h1> <br>
+                                    <div class="tab">
+                                        <button class="tablinks" onclick="openElement(event, 'BasicInfo')" id="defaultOpen">Basic Info</button>
+                                        <button class="tablinks" onclick="openElement(event, 'Statistics')">Statistics</button>
+                                        <button class="tablinks" onclick="openElement(event, 'ect')">ect</button>
+                                    </div>
+                                    
+                                      <div id="BasicInfo" class="tabcontent">
+                                        <h3>Basic Info</h3>
+                                        <p>Name: Ali</p>
+                                        <p>Surname: Ali</p>
+                                        <p>Company: Ali</p>
+                                      </div>
+                                      
+                                      <div id="Statistics" class="tabcontent">
+                                        <h3>Statistics</h3>
+                                        <p>Project finish rate: 89%</p>
+                                        <p>Project finish rate before deadline: 11%</p> 
+                                        <p>Coments per project: 54%</p> 
+                                      </div>
+                                      
+                                      <div id="ect" class="tabcontent">
+                                        <h3>other info we can add</h3>
+                                        <p>Idk what we can add but we should add it here.</p>
+                                      </div>
+                                    </div>
+                                </div>
                                 <div class="tab-pane" id="About" role="tabpanel" aria-labelledby="about-tab">
+                                  <div class="wrapper fade-in">
                                     <div class="container2">
                                     <div class="header">
-                                        <h1>Our SuperCool team</h1>
+                                        <h1>Our SuperCool Team</h1>
                                     </div>
                                     <br><br>
                                     <div class="row">
@@ -120,7 +149,6 @@
                                             </div>
                                           </div>
                                         </div>
-                                      
                                         <div class="column">
                                           <div class="card">
                                             <img src="../images/alemdar.jpeg" alt="Alemdar" style="width:100%">
@@ -132,7 +160,6 @@
                                             </div>
                                           </div>
                                         </div>
-
                                         <div class="column">
                                             <div class="card">
                                               <img src="../images/fatbardh.png" alt="Fatbardh" style="width: 100%">
@@ -144,7 +171,6 @@
                                               </div>
                                             </div>
                                         </div>
-
                                         <div class="column">
                                           <div class="card">
                                             <img src="../images/kunduz.jpeg" alt="Kunduz" style="width:100%">
@@ -157,18 +183,17 @@
                                           </div>
                                         </div>
                                     </div>
-
+                                  </div>
                                 </div>
                                 <br>
-
                                 </div>
                                 <div class="tab-pane" id="Career" role="tabpanel" aria-labelledby="career-tab">
-                                    
+                                  <div class="wrapper fade-in">
                                     <div class="header">
                                         <h1>Let's get in touch ...</h1>
                                         <p>Please sent us your question and opinions. Not that we are ever gonna read them ...</p>
                                     </div>
-
+                                    <div>
                                     <div class="container3">
                                         <form action="/action_page.php">
                                           <label for="fname">First Name</label>
