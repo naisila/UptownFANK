@@ -104,9 +104,10 @@ btnAuth.addEventListener("click", function(e) {
         $.post("register.php",
         { name: mName, email : mEmail, password: mPassword, address: mAddress, phone: mPhoneNumber, organization: mOrganization},
         function(response){
-            if(response.status == "success"){
+            pResponse = JSON.parse(response)
+            if(pResponse.status == "success"){
                 hideLoginPage()
-                gUserId = userId
+                gUserId = pResponse.userID
                 alert("Successfully registered")
             }
             else{
