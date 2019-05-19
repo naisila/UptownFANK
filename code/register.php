@@ -33,7 +33,10 @@
   if($row[0] > 0)
   {
     $result->status = "success";
+    $result->userID = $user_id;
 
+    $add_phone = "INSERT INTO Phone(userID, phoneNumber) VALUES ('$user_id', '$phone')";
+    mysqli_query($conn, $add_phone);
     //not a superuser
     if(empty($organization))
     {
@@ -41,8 +44,8 @@
     //superuser
     else
     {
-      $superuser = "INSERT INTO SuperUser(userID, organization) VALUES ()"
-      echo "Please set a password";
+      $add_superuser = "INSERT INTO SuperUser(userID, organization) VALUES ('$user_id', '$organization')";
+      mysqli_query($conn, $add_superuser);
     }
   }
   else
@@ -51,7 +54,8 @@
     $result->userID = "";
   }
 
+  //{"status": "success", "userID": "12345"}
+
   $json_res = json_encode($result);
   echo $json_res;
-
 ?>
