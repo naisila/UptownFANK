@@ -8,12 +8,12 @@
 import java.sql.*;
 import java.util.Properties;
 
-public class Connect
+public class Setup
 {
 	// Connecting through JDBC Driver for MySQL
 	// login credentials
 	private static final String dbClass = "com.mysql.jdbc.Driver";
-	
+
 	//change this accordingly
 	private static final String dbConnection = "jdbc:mysql://dijkstra.ug.bcc.bilkent.edu.tr/naisila_puka";
 	//change this accordingly
