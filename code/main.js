@@ -90,58 +90,6 @@ function clearInputs(){
 
 
 btnAuth.addEventListener("click", function(e) {
-    if(e.target.innerText.includes("Register")){
-        console.log("Register clicked")
-        
-        mName = name.value
-        mEmail = email.value
-        mPassword = password.value
-        mAddress = address.value
-        mPhoneNumber = phone.value
-        mOrganization = organization.value
-
-
-        $.post("register.php",
-        { name: mName, email : mEmail, password: mPassword, address: mAddress, phone: mPhoneNumber, organization: mOrganization},
-        function(response){
-            pResponse = JSON.parse(response)
-            if(pResponse.status == "success"){
-                hideLoginPage()
-                gUserId = pResponse.userID
-                alert("Successfully registered")
-            }
-            else{
-                alert("There was some error with register")
-            }
-        });
-        
-    }
-    else{
-        const response = login()
-        if(response.status == "success"){
-            gUserId = response.userId
-            console.log("User Id is", gUserId)
-            hideLoginPage()
-        }
-        else{
-            alert("There was some error with login")
-        }   
-    }
-
-    clearInputs()
-})
-
-function login(){
-    returnInfo = {
-        status: "success",
-        userId:  "1245" 
-    }
-
-    return returnInfo
-}
-
-/*function register(){
-
     mName = name.value
     mEmail = email.value
     mPassword = password.value
@@ -149,15 +97,51 @@ function login(){
     mPhoneNumber = phone.value
     mOrganization = organization.value
 
+    if(e.target.innerText.includes("Register")){
 
-    $.post("register.php",
-    { name: mName, email : mEmail, password: mPassword, address: mAddress, phone: mPhoneNumber, organization: mOrganization},
-    function(response){
-        return response
-    });
-    
-}
-*/
+        if(mName == "" || mEmail == "" || mPassword == "" || mAddress == "" || mPhoneNumber == ""){
+            window.alert("Please fill out all the fields")
+        }
+        else{
+            $.post("register.php",
+            { name: mName, email : mEmail, password: mPassword, address: mAddress, phone: mPhoneNumber, organization: mOrganization},
+            function(response){
+                pResponse = JSON.parse(response)
+                if(pResponse.status == "success"){
+                    hideLoginPage()
+                    gUserId = pResponse.userID
+                    alert("Successfully registered")
+                }
+                else{
+                    alert("There was some error with Register")
+                }
+            });
+
+        }
+    }
+    else{
+        if( mEmail == "" || mPassword == ""){
+            window.alert("Please fill out all the fields")
+        }else{
+            $.post("login.php",
+            { email: mEmail, password: mPassword},
+            function(response){
+                pResponse = JSON.parse(response)
+                if(pResponse.status == "success"){
+                    hideLoginPage()
+                    gUserId = pResponse.userID
+                    alert("Successfully logged in")
+                }
+                else{
+                    alert("There was some error with Login")
+                }
+            });   
+        }
+    }
+
+    clearInputs()
+})
+
 
 function openElement(evt, cityName) {
     var i, tabcontent, tablinks;
