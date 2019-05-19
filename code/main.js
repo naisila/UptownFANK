@@ -107,7 +107,7 @@ function register(){
 
 
     $.post("register.php",
-    { name: mName, email = mEmail, password = mPassword, address = mAddress, phone = mPhoneNumber, organization = mOrganization},
+    { name: mName, email : mEmail, password: mPassword, address: mAddress, phone: mPhoneNumber, organization: mOrganization},
     function(response){
         alert(response);
 	});
