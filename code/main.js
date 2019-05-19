@@ -17,6 +17,12 @@ const teamName = document.getElementById("teamName")
 const registerMsg = "Dont have an account yet, Click here to register!"
 const loginMsg = "Already registered, Click here to Login!"
 
+
+//Persistent variables
+var gUserId;
+var gAddButton;
+var gTeamId;
+
 window.onload = function() {
     initialSetup()
 };
@@ -83,17 +89,42 @@ function clearInputs(){
 }
 
 
-btnAuth.addEventListener("click", function() {
-    if(login()){
-        hideLoginPage()
+btnAuth.addEventListener("click", function(e) {
+    if(e.target.innerText.includes("Register")){
+        console.log("Register clicked")
+        const response = register()
+        if(response.status == "success"){
+            hideLoginPage()
+            gUserId = userId
+            alert("Successfully registered")
+        }
+        else{
+            alert("There was some error with register")
+        }
+        
     }
     else{
-        alert("There was some error with login")
+        const response = login()
+        if(response.status == "success"){
+            gUserId = response.userId
+            console.log("User Id is", gUserId)
+            hideLoginPage()
+        }
+        else{
+            alert("There was some error with login")
+        }   
     }
+
+    clearInputs()
 })
 
 function login(){
-    return true
+    returnInfo = {
+        status: "success",
+        userId:  "1245" 
+    }
+
+    return returnInfo
 }
 
 function register(){
@@ -109,8 +140,9 @@ function register(){
     $.post("register.php",
     { name: mName, email : mEmail, password: mPassword, address: mAddress, phone: mPhoneNumber, organization: mOrganization},
     function(response){
-        alert(response);
-	});
+        return response
+    });
+    
 }
 
 
@@ -134,5 +166,77 @@ newteam.addEventListener("click", function(){
 
 
 function createTeam(teamName){
+    $.post("create_table.php",
+    { name: teamName, userId : gUserId},
+    function(response){
+        if(response.status == "success"){
+            createTeamCard(response.teamId)
+        }
+        else{
+            alert("There was some error while creating a New Team")
+        }
+    });
+}
+
+function createTeamCard(teamName, response){
+  name = teamName
+  teamId = response.teamId
+
+  var card = document.createElement("div")
+  card.className = "card"
+  card.id = teamId
+
+  var cardHeader = document.createElement("div")
+  cardHeader.className = "card-header"
+  cardHeader.id = name + "H"
+
+  var h5 = document.createElement("h5")
+  h5.className = "mb-0"
+
+  var hButton = document.createElement("button")
+  var area = name + "B"
+  hButton.className = "btn btn-link"
+  hButton.setAttribute("type", "button")
+  hButton.setAttribute("data-toggle", "collapse")
+  hButton.setAttribute("data-target", ("#" + area))
+  hButton.setAttribute("aria-expanded", "false")
+  hButton.setAttribute("aria-controls", area)
+  hButton.innerText = name
+
+  h5.append(hButton)
+
+  addButton = document.createElement("a")
+  addButton.className = "btn btn-info"
+  addButton.innerText = "New Board"
+  addButton.setAttribute("href", "#")
+  addButton.setAttribute("data-toggle", "modal")
+  addButton.setAttribute("data-target","#addModal")
+  addButton.addEventListener("click", function(){
+    gTeamId = teamId
+    gAddButton = addButton
+  })
+
+  h5.append(addButton)
+
+  cardHeader.append(h5)
+
+  var inside = document.createElement("div")
+  inside.id = area
+  inside.className = "collapse"
+  inside.setAttribute("aria-labelledby", cardHeader.id)
+  var parent = "#accordionTeams"
+  inside.setAttribute("data-parent", parent)
+  //inside.setAttribute("style", )
+
+  var body = document.createElement("div")
+  body.className = "card-body"
+  var bodyId = name + "I"
+  body.id = bodyId
+  inside.append(body)
+
+  card.append(cardHeader, inside)
+
+  var menu = document.getElementById("accordionTeams")
+  menu.append(card)
 
 }
