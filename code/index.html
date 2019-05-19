@@ -83,7 +83,24 @@
                         </ul>
 
                         <div class="tab-content">
-                                <div class="tab-pane active" id="Boards" role="tabpanel" aria-labelledby="boards-tab"></div>
+                                <div class="tab-pane active" id="Boards" role="tabpanel" aria-labelledby="boards-tab">
+                                        <p>
+                                            <button class="btn btn-primary new-table-btn" type="button" data-toggle="collapse" data-target="#newTeam" aria-expanded="false" aria-controls="newTeam" id="NTB" >
+                                                New Team
+                                            </button>
+                                        </p>
+                                        <div class="collapse new-table-input" id="newTeam" >
+                                            <div class="card card-body">
+                                                <div class="input-group mb-3">
+                                                    <input type="text" class="form-control" placeholder="Enter Team name" aria-label="Team Name" id="teamName">
+                                                    <button type="button" class="btn btn-success" id="submitTeam">Create</button>
+                                                </div>                           
+                                            </div>
+                                        </div>
+                    
+                                        <div class="accordion" id="accordionTeams">
+                                        </div>
+                                </div>
                                 <div class="tab-pane" id="Profile" role="tabpanel" aria-labelledby="profile-tab"></div>
                                 <div class="tab-pane" id="About" role="tabpanel" aria-labelledby="about-tab"></div>
                                 <div class="tab-pane" id="Career" role="tabpanel" aria-labelledby="career-tab"></div>
