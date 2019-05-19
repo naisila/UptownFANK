@@ -169,7 +169,7 @@ newteam.addEventListener("click", function(){
 
 
 function createTeam(teamName, mAffiliation, mKey){
-    $.post("create_table.php",
+    $.post("create_team.php",
     { name: teamName, userId : gUserId, affiliation: mAffiliation, key: mKey},
     function(response){
         pResponse = JSON.parse(response)
