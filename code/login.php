@@ -1,4 +1,10 @@
 <?php
+/**
+ * Login Procedure
+ * @author Naisila Puka
+ * @version 19/05/2019
+ */
+
   include('utils/config.php');
 
   $email = $_POST['email'];
@@ -19,7 +25,7 @@
   //$row = mysqli_fetch_array($reg_result);
 
 
-  if($res)
+  if(mysqli_num_rows($res))
   {
     $user_id = $res->fetch_assoc()["userID"];
     $result->status = "success";

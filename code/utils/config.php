@@ -1,4 +1,10 @@
 <?php
+/**
+ * Database Connection
+ * @author Naisila Puka
+ * @version 19/05/2019
+ */
+
   define('HOST_NAME','dijkstra.ug.bcc.bilkent.edu.tr');
   define('DB_USERNAME','naisila.puka');
   define('DB_PASSWORD','BAlFiBwZ');

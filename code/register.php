@@ -1,4 +1,10 @@
 <?php
+/**
+ * Registration Procedure
+ * @author Naisila Puka
+ * @version 19/05/2019
+ */
+
   include('utils/config.php');
 
   $name = $_POST['name'];
