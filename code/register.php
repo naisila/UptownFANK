@@ -25,13 +25,14 @@
   $reg_query = "INSERT INTO BasicUser(name, email, password, address) VALUES ( '$name', '$email', '$password', '$address');";
 
 
-  $reg_result = mysqli_query($conn, $reg_query);
-  $user_id = mysqli_insert_id($conn);
-  $row = mysqli_fetch_array($reg_result);
+  //$reg_result = mysqli_query($conn, $reg_query);
+  
+  //$row = mysqli_fetch_array($reg_result);
 
 
-  if($row[0] > 0)
+  if(mysqli_query($conn, $reg_query))
   {
+    $user_id = mysqli_insert_id($conn);
     $result->status = "success";
     $result->userID = $user_id;
 
