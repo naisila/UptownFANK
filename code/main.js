@@ -13,6 +13,9 @@ const loginPage = document.getElementById("loginPage")
 const insidePage = document.getElementById("insidePage")
 const newteam = document.getElementById("submitTeam")
 const teamName = document.getElementById("teamName")
+const affiliation = document.getElementById("affiliation")
+const teamKey = document.getElementById("teamKey")
+
 
 const registerMsg = "Dont have an account yet, Click here to register!"
 const loginMsg = "Already registered, Click here to Login!"
@@ -107,6 +110,7 @@ btnAuth.addEventListener("click", function(e) {
             { name: mName, email : mEmail, password: mPassword, address: mAddress, phone: mPhoneNumber, organization: mOrganization},
             function(response){
                 pResponse = JSON.parse(response)
+                console.log(pResponse.status)
                 if(pResponse.status == "success"){
                     hideLoginPage()
                     gUserId = pResponse.userID
@@ -143,19 +147,7 @@ btnAuth.addEventListener("click", function(e) {
 })
 
 
-function openElement(evt, cityName) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " active";
-  }
+
 
 function hideLoginPage(){
     loginPage.style.display = "none"
@@ -169,19 +161,20 @@ function showLoginPage(){
 
 newteam.addEventListener("click", function(){
 
-    createTeam(teamName.value)
+    createTeam(teamName.value, affiliation.value, teamKey.value)
 
     $("#NTB").trigger("click")
     teamName.value = ""
 })
 
 
-function createTeam(teamName){
+function createTeam(teamName, mAffiliation, mKey){
     $.post("create_table.php",
-    { name: teamName, userId : gUserId},
+    { name: teamName, userId : gUserId, affiliation: mAffiliation, key: mKey},
     function(response){
-        if(response.status == "success"){
-            createTeamCard(response.teamId)
+        pResponse = JSON.parse(response)
+        if(pResponse.status == "success"){
+            createTeamCard(teamName, pResponse)
         }
         else{
             alert("There was some error while creating a New Team")
@@ -251,6 +244,20 @@ function createTeamCard(teamName, response){
   menu.append(card)
 
 }
+
+function openElement(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
 
 
 //fade animation
