@@ -9,6 +9,8 @@ const superUser = document.getElementById("userType2")
 const organization = document.getElementById("organization")
 const btnAuth = document.getElementById("btnAuth")
 const btnAuthAlter = document.getElementById("btnAuthAlter")
+const loginPage = document.getElementById("loginPage")
+const insidePage = document.getElementById("insidePage")
 
 const registerMsg = "Dont have an account yet, Click here to register!"
 const loginMsg = "Already registered, Click here to Login!"
@@ -77,3 +79,27 @@ function clearInputs(){
     organization.value = ""
 }
 
+
+btnAuth.addEventListener("click", function() {
+    if(login()){
+        hideLoginPage()
+    }
+    else{
+        alert("There was some error with login")
+    }
+})
+
+function login(){
+    return true
+}
+
+
+function hideLoginPage(){
+    loginPage.style.display = "none"
+    insidePage.style.display = "block"
+}
+
+function showLoginPage(){
+    insidePage.style.display = "none"
+    loginPage.style.display = "block"
+}

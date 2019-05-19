@@ -9,59 +9,88 @@
     <title>Uptown FANK</title>
 </head>
 <body>
+    
     <div class="containter" id="whole">
-            <div class="outer">
-                    <div class="middle">
-                      <div class="inner">
-                            <img src="../images/logo.png" class="img-thumbnail" id="logo">
-                            <form>
-                            <div class="form-group">
-                                <label for="txtEmail">Email address</label>
-                                <input type="email" class="form-control" id="txtEmail" aria-describedby="emailHelp" placeholder="Enter email">
-                            </div>
-                            <div class="form-group">
-                                <label for="txtPassword">Password</label>
-                                <input type="password" class="form-control" id="txtPassword" placeholder="Password">
-                            </div>
-                            <div class="form-group">
-                                <label for="txtName">Name</label>
-                                <input type="text" class="form-control" id="txtName" placeholder="Name">
-                            </div>
-                            <div class="form-group">
-                                <label for="txtAddress">Address</label>
-                                <input type="text" class="form-control" id="txtAddress" placeholder="Address">
-                            </div>
-                            <div class="form-group">
-                                <label for="phoneNumber">Phone Number</label>
-                                <input type="tel" class="form-control" id="phoneNumber" placeholder="Phone Number">
-                            </div>
-                            <div class="form-group" id="userSelection">
-                                <label for="userType">User Type</label>
-                                <div class="form-check" id="userType">
-                                    <input class="form-check-input" type="radio" name="userType" id="userType1" value="option1" checked>
-                                    <label class="form-check-label" for="userType1">
-                                       Basic User
-                                    </label>
+            <div class="container" id="loginPage">
+                    <div class="outer">
+                            <div class="middle">
+                              <div class="inner">
+                                    <img src="../images/logo.png" class="img-thumbnail" id="logo">
+                                    <form>
+                                    <div class="form-group">
+                                        <label for="txtEmail">Email address</label>
+                                        <input type="email" class="form-control" id="txtEmail" aria-describedby="emailHelp" placeholder="Enter email">
                                     </div>
-                                    <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="userType" id="userType2" value="option2">
-                                    <label class="form-check-label" for="userType2">
-                                        Super User
-                                    </label>
+                                    <div class="form-group">
+                                        <label for="txtPassword">Password</label>
+                                        <input type="password" class="form-control" id="txtPassword" placeholder="Password">
                                     </div>
+                                    <div class="form-group">
+                                        <label for="txtName">Name</label>
+                                        <input type="text" class="form-control" id="txtName" placeholder="Name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="txtAddress">Address</label>
+                                        <input type="text" class="form-control" id="txtAddress" placeholder="Address">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="phoneNumber">Phone Number</label>
+                                        <input type="tel" class="form-control" id="phoneNumber" placeholder="Phone Number">
+                                    </div>
+                                    <div class="form-group" id="userSelection">
+                                        <label for="userType">User Type</label>
+                                        <div class="form-check" id="userType">
+                                            <input class="form-check-input" type="radio" name="userType" id="userType1" value="option1" checked>
+                                            <label class="form-check-label" for="userType1">
+                                               Basic User
+                                            </label>
+                                            </div>
+                                            <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="userType" id="userType2" value="option2">
+                                            <label class="form-check-label" for="userType2">
+                                                Super User
+                                            </label>
+                                            </div>
+                                    </div>
+                                    <div class="form-group">
+                                            <label for="organization">Organization</label>
+                                            <input type="tel" class="form-control" id="organization" placeholder="Organization">
+                                        </div>
+                                    <button type="button" class="btn btn-primary" id="btnAuth">Login</button>
+                                    <div style="display: flex; justify-content: flex-end">
+                                        <button type="button" class="btn btn-link" id="btnAuthAlter">Dont have an account yet, Click here to register!</button>
+                                    </div>
+                                    </form>
                             </div>
-                            <div class="form-group">
-                                    <label for="organization">Organization</label>
-                                    <input type="tel" class="form-control" id="organization" placeholder="Organization">
-                                </div>
-                            <button type="button" class="btn btn-primary" id="btnAuth">Login</button>
-                            <div style="display: flex; justify-content: flex-end">
-                                <button type="button" class="btn btn-link" id="btnAuthAlter">Dont have an account yet, Click here to register!</button>
-                            </div>
-                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
+                <div class="container" id= "insidePage">
+
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                            <a class="nav-link active" id="boards-tab" data-toggle="tab" href="#Boards" role="tab" aria-controls="Boards" aria-selected="true">Boards</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#Profile" role="tab" aria-controls="Profile" aria-selected="false">Profile</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" id="about-tab" data-toggle="tab" href="#About" role="tab" aria-controls="About" aria-selected="false">About us</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#Career" role="tab" aria-controls="Career" aria-selected="false">Career at UptownFANK</a>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content">
+                                <div class="tab-pane active" id="Boards" role="tabpanel" aria-labelledby="boards-tab"></div>
+                                <div class="tab-pane" id="Profile" role="tabpanel" aria-labelledby="profile-tab"></div>
+                                <div class="tab-pane" id="About" role="tabpanel" aria-labelledby="about-tab"></div>
+                                <div class="tab-pane" id="Career" role="tabpanel" aria-labelledby="career-tab"></div>
+                                
+                        </div>
+
+                </div>
     </div>
 
     <!--For Bootstrap-->
