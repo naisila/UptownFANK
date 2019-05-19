@@ -25,6 +25,7 @@ function initialSetup(){
     phone.parentNode.style.display = "none"
     userSelection.style.display = "none"
     organization.parentNode.style.display = "none"
+    insidePage.style.display = "none"
 }
 
 btnAuthAlter.addEventListener("click", function (e){
