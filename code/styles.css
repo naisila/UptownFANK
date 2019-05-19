@@ -51,3 +51,129 @@ margin-right: auto;
 width: 400px;
 /*whatever width you want*/
 }
+
+/* about css*/
+/* Three columns side by side */
+.column {
+    float: left;
+    width: 25%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+  }
+  
+  /* Display the columns below each other instead of side by side on small screens */
+  @media screen and (max-width: 400px) {
+    .column {
+      width: 100%;
+      display: block;
+    }
+  }
+  
+  /* Add some shadows to create a card effect */
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Some left and right padding inside the container */
+  .container {
+    padding: 0 16px;
+  }
+  
+  /* Clear floats */
+  .container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .title {
+    color: grey;
+  }
+  
+  .button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .button:hover {
+    background-color: #555;
+  }
+  /*end about css*/
+
+  /*Container*/
+  container2 {
+    border: 2px solid #ccc;
+    background-color: #eee;
+    border-radius: 5px;
+    padding: 16px;
+    margin: 16px 0
+  }
+  
+  .container2::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .container2 img {
+    float: left;
+    margin-right: 20px;
+    border-radius: 50%;
+  }
+  
+  .container2 span {
+    font-size: 20px;
+    margin-right: 15px;
+  }
+  
+  @media (max-width: 500px) {
+    .container2 {
+        text-align: center;
+    }
+    .container2 img {
+        margin: auto;
+        float: none;
+        display: block;
+    }
+  }
+
+  /*contact us*/
+  body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container3 {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
