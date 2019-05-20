@@ -1,8 +1,8 @@
 /* Set height of body and the document to 100% to enable "full page tabs" */
 body, html {
-    height: 100%;
-    margin: 0;
-    font-family: Arial;
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
 }
 
 /* Style tab links */
@@ -55,127 +55,127 @@ width: 400px;
 /* about css*/
 /* Three columns side by side */
 .column {
-    float: left;
-    width: 25%;
-    margin-bottom: 16px;
-    padding: 0 8px;
-  }
-  
-  /* Display the columns below each other instead of side by side on small screens */
-  @media screen and (max-width: 400px) {
-    .column {
-      width: 100%;
-      display: block;
-    }
-  }
-  
-  /* Add some shadows to create a card effect */
-  .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Some left and right padding inside the container */
-  .container {
-    padding: 0 16px;
-  }
-  
-  /* Clear floats */
-  .container::after, .row::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-  
-  .title {
-    color: grey;
-  }
-  
-  .button {
-    border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 8px;
-    color: white;
-    background-color: #000;
-    text-align: center;
-    cursor: pointer;
+  float: left;
+  width: 25%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+/* Display the columns below each other instead of side by side on small screens */
+@media screen and (max-width: 400px) {
+  .column {
     width: 100%;
+    display: block;
   }
-  
-  .button:hover {
-    background-color: #555;
-  }
-  /*end about css*/
+}
 
-  /*Container*/
-  container2 {
-    border: 2px solid #ccc;
-    background-color: #eee;
-    border-radius: 5px;
-    padding: 16px;
-    margin: 16px 0
+/* Add some shadows to create a card effect */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Some left and right padding inside the container */
+.container {
+  padding: 0 16px;
+}
+
+/* Clear floats */
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+/*end about css*/
+
+/*Container*/
+container2 {
+  border: 2px solid #ccc;
+  background-color: #eee;
+  border-radius: 5px;
+  padding: 16px;
+  margin: 16px 0
+}
+
+.container2::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.container2 img {
+  float: left;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.container2 span {
+  font-size: 20px;
+  margin-right: 15px;
+}
+
+@media (max-width: 500px) {
+  .container2 {
+      text-align: center;
   }
-  
-  .container2::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-  
   .container2 img {
-    float: left;
-    margin-right: 20px;
-    border-radius: 50%;
+      margin: auto;
+      float: none;
+      display: block;
   }
-  
-  .container2 span {
-    font-size: 20px;
-    margin-right: 15px;
-  }
-  
-  @media (max-width: 500px) {
-    .container2 {
-        text-align: center;
-    }
-    .container2 img {
-        margin: auto;
-        float: none;
-        display: block;
-    }
-  }
+}
 
-  /*contact us*/
-  body {font-family: Arial, Helvetica, sans-serif;}
+/*contact us*/
+body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box;}
 
 input[type=text], select, textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical;
+width: 100%;
+padding: 12px;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+margin-top: 6px;
+margin-bottom: 16px;
+resize: vertical;
 }
 
 input[type=submit] {
-  background-color: #4CAF50;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+background-color: #4CAF50;
+color: white;
+padding: 12px 20px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
 }
 
 input[type=submit]:hover {
-  background-color: #45a049;
+background-color: #45a049;
 }
 
 .container3 {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
+border-radius: 5px;
+background-color: #f2f2f2;
+padding: 20px;
 
 }
 
@@ -211,136 +211,124 @@ body {font-family: "Lato", sans-serif;}
 
 /* Style the tab */
 .tab {
-  float: left;
-  border: 1px solid rgb(83, 117, 231);
-  background-color: #4277e9e8;
-  width: 30%;
-  height: 300px;
+float: left;
+border: 1px solid rgb(83, 117, 231);
+background-color: #4277e9e8;
+width: 30%;
+height: 300px;
 }
 
 /* Style the buttons inside the tab */
 .tab button {
-  display: block;
-  background-color: #5b70e4;
-  color: black;
-  padding: 22px 16px;
-  width: 100%;
-  border: none;
-  outline: none;
-  text-align: center;
-  cursor: pointer;
-  transition: 0.3s;
-  font-size: 17px;
+display: block;
+background-color: #5b70e4;
+color: black;
+padding: 22px 16px;
+width: 100%;
+border: none;
+outline: none;
+text-align: center;
+cursor: pointer;
+transition: 0.3s;
+font-size: 17px;
 }
 
 /* Change background color of buttons on hover */
 .tab button:hover {
-  background-color: rgb(156, 145, 255);
+background-color: rgb(156, 145, 255);
 }
 
 /* Create an active/current "tab button" class */
 .tab button.active {
-  background-color: rgb(156, 145, 255);
+background-color: rgb(156, 145, 255);
 }
 
 /* Style the tab content */
 .tabcontent {
-  float: left;
-  padding: 0px 12px;
-  background-color: #6791ec73;
-  width: 70%;
-  border-left: none;
-  height: 300px;
+float: left;
+padding: 0px 12px;
+background-color: #6791ec73;
+width: 70%;
+border-left: none;
+height: 300px;
 }
 
 
 /*fade in*/
 .fade-in{
-  animation: animationFrames ease 1s;
-  animation-iteration-count: 1;
-  transform-origin: 50% 50%;
-  animation-fill-mode:forwards; /*when the spec is finished*/
-  -webkit-animation: animationFrames ease 1s;
-  -webkit-animation-iteration-count: 1;
-  -webkit-transform-origin: 50% 50%;
-  -webkit-animation-fill-mode:forwards; /*Chrome 16+, Safari 4+*/ 
-  -moz-animation: animationFrames ease 1s;
-  -moz-animation-iteration-count: 1;
-  -moz-transform-origin: 50% 50%;
-  -moz-animation-fill-mode:forwards; /*FF 5+*/
-  -o-animation: animationFrames ease 1s;
-  -o-animation-iteration-count: 1;
-  -o-transform-origin: 50% 50%;
-  -o-animation-fill-mode:forwards; /*Not implemented yet*/
-  -ms-animation: animationFrames ease 1s;
-  -ms-animation-iteration-count: 1;
-  -ms-transform-origin: 50% 50%;
-  -ms-animation-fill-mode:forwards; /*IE 10+*/
+animation: animationFrames ease 1s;
+animation-iteration-count: 1;
+transform-origin: 50% 50%;
+animation-fill-mode:forwards; /*when the spec is finished*/
+-webkit-animation: animationFrames ease 1s;
+-webkit-animation-iteration-count: 1;
+-webkit-transform-origin: 50% 50%;
+-webkit-animation-fill-mode:forwards; /*Chrome 16+, Safari 4+*/ 
+-moz-animation: animationFrames ease 1s;
+-moz-animation-iteration-count: 1;
+-moz-transform-origin: 50% 50%;
+-moz-animation-fill-mode:forwards; /*FF 5+*/
+-o-animation: animationFrames ease 1s;
+-o-animation-iteration-count: 1;
+-o-transform-origin: 50% 50%;
+-o-animation-fill-mode:forwards; /*Not implemented yet*/
+-ms-animation: animationFrames ease 1s;
+-ms-animation-iteration-count: 1;
+-ms-transform-origin: 50% 50%;
+-ms-animation-fill-mode:forwards; /*IE 10+*/
 }
 
 @keyframes animationFrames{
-  0% {
-    opacity:0;
-    transform:  translate(0px,-25px)  ;
-  }
-  100% {
-    opacity:1;
-    transform:  translate(0px,0px)  ;
-  }
+0% {
+  opacity:0;
+  transform:  translate(0px,-25px)  ;
+}
+100% {
+  opacity:1;
+  transform:  translate(0px,0px)  ;
+}
 }
 
 @-moz-keyframes animationFrames{
-  0% {
-    opacity:0;
-    -moz-transform:  translate(0px,-25px)  ;
-  }
-  100% {
-    opacity:1;
-    -moz-transform:  translate(0px,0px)  ;
-  }
+0% {
+  opacity:0;
+  -moz-transform:  translate(0px,-25px)  ;
+}
+100% {
+  opacity:1;
+  -moz-transform:  translate(0px,0px)  ;
+}
 }
 
 @-webkit-keyframes animationFrames {
-  0% {
-    opacity:0;
-    -webkit-transform:  translate(0px,-25px)  ;
-  }
-  100% {
-    opacity:1;
-    -webkit-transform:  translate(0px,0px)  ;
-  }
+0% {
+  opacity:0;
+  -webkit-transform:  translate(0px,-25px)  ;
+}
+100% {
+  opacity:1;
+  -webkit-transform:  translate(0px,0px)  ;
+}
 }
 
 @-o-keyframes animationFrames {
-  0% {
-    opacity:0;
-    -o-transform:  translate(0px,-25px)  ;
-  }
-  100% {
-    opacity:1;
-    -o-transform:  translate(0px,0px)  ;
-  }
+0% {
+  opacity:0;
+  -o-transform:  translate(0px,-25px)  ;
+}
+100% {
+  opacity:1;
+  -o-transform:  translate(0px,0px)  ;
+}
 }
 
 @-ms-keyframes animationFrames {
-  0% {
-    opacity:0;
-    -ms-transform:  translate(0px,-25px)  ;
-  }
-  100% {
-    opacity:1;
-    -ms-transform:  translate(0px,0px)  ;
-  }
+0% {
+  opacity:0;
+  -ms-transform:  translate(0px,-25px)  ;
 }
-
-body { padding-top:30px; }
-.widget .panel-body { padding:0px; }
-.widget .list-group { margin-bottom: 0; }
-.widget .panel-title { display:inline }
-.widget .label-info { float: right; }
-.widget li.list-group-item {border-radius: 0;border: 0;border-top: 1px solid #ddd;}
-.widget li.list-group-item:hover { background-color: rgba(86,61,124,.1); }
-.widget .mic-info { color: #666666;font-size: 11px; }
-.widget .action { margin-top:5px; }
-.widget .comment-text { font-size: 12px; }
-.widget .btn-block { border-top-left-radius:0px;border-top-right-radius:0px; }
+100% {
+  opacity:1;
+  -ms-transform:  translate(0px,0px)  ;
+}
+}

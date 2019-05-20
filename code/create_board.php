@@ -39,7 +39,8 @@
     $result->boardId = $boardId;
 
     //insert into works on
-    $query = "INSERT INTO WorksOn(boardID, teamID) VALUES('$boardId', '$teamId');"
+    $query = "INSERT INTO WorksOn(boardID, teamID) VALUES('$boardId', '$teamId');";
+    mysqli_query($conn, $query);
   }
   else
   {

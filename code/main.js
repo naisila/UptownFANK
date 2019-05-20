@@ -226,7 +226,7 @@ function createTeamCard(teamName, response){
 
   var inside = document.createElement("div")
   inside.id = area
-  inside.className = "collapse"
+  inside.className = "collapse show"
   inside.setAttribute("aria-labelledby", cardHeader.id)
   var parent = "#accordionTeams"
   inside.setAttribute("data-parent", parent)
@@ -234,8 +234,15 @@ function createTeamCard(teamName, response){
 
   var body = document.createElement("div")
   body.className = "card-body"
-  var bodyId = name + "I"
-  body.id = bodyId
+  
+
+  var columns = document.createElement("div")
+  columns.className = "card-columns"
+  var columnsId = teamId + "I"
+  columns.id = columnsId
+
+  body.append(columns)
+
   inside.append(body)
 
   card.append(cardHeader, inside)
@@ -257,12 +264,12 @@ document.getElementById("submitBoard").addEventListener("click", function() {
 
 
     $.post("create_board.php",
-    { teamId: teamId, name: name, description: description, priority: priority, color: color, requirements: requirements, ET: ET},
+    { userId: gUserId ,teamId: teamId, name: name, description: description, priority: priority, color: color, requirements: requirements, estimatedTime: ET},
     function(response){
         pResponse = JSON.parse(response)
         console.log(pResponse.status)
         if(pResponse.status == "success"){
-            createBoardCard(teamId, color, pResponse)
+            createBoardCard(teamId, name, color, description, requirements, pResponse)
         }
         else{
             alert("There was some error with Adding a new Board")
@@ -280,6 +287,42 @@ document.getElementById("submitBoard").addEventListener("click", function() {
     $(gAddButton).trigger("click")
   
 })
+
+function createBoardCard(teamId, name, color, description, requirements, response){
+    //alert("Now I am gonna create the board")
+
+    var cardWrapper = document.createElement("div")
+    cardWrapper.setAttribute("style", "18rem")
+    cardWrapper.className = "card text-white mb-3"
+    var backgroundColor = "background-color:" + color
+    cardWrapper.setAttribute("style", backgroundColor)
+
+    var cardHeader = document.createElement("div")
+    cardHeader.className = "card-header"
+    cardHeader.innerText = name
+    
+    var cardBody = document.createElement("div")
+    cardBody.className = "card-body"
+
+    var cardTitle = document.createElement("h5")
+    cardTitle.className = "card-title"
+    cardTitle.innerText = description
+
+    var cardText = document.createElement("p")
+    cardText.innerText = requirements
+
+    //Append Everything
+    cardBody.append(cardTitle, cardText)
+
+    cardWrapper.append(cardHeader, cardBody)
+
+    var parentId = teamId + "I"
+
+    var parent = document.getElementById(parentId)
+
+    parent.append(cardWrapper)
+    
+}
   
 
 function openElement(evt, cityName) {
