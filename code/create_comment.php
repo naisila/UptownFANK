@@ -9,37 +9,42 @@
 
   //Give me inputs as in these POST functions
   //-----------
-  $relatedCheckList = $_POST['relatedCheckList'];
+  $relatedCard = $_POST['relatedCard'];
 
-  //Should be either 'True' or 'False'
-  $completedStatus = $_POST['completedStatus'];
-  $content = $_POST['content'];
-  $completor = $_POST['completor'];
+  //CAUTION: TIMESTAMP FORMAT IN '2038-01-19 03:14:07'
+  $timestamp = $_POST['tiemestamp'];
+
+  //In form of 'True' or 'False'
+  $resolvedStatus = $_POST['resolvedStatus'];
+
+  $commenter = $_POST['commenter'];
+  $text = $_POST['text'];
   //-----------
 
-  $relatedCheckList = (string) $relatedCheckList;
-  $completedStatus = (string) $completedStatus;
-  $content = (string) $content;
-  $completor = (string) $completor;
+  $relatedCard = (string) $relatedCard;
+  $timestamp = (string) $timestamp;
+  $commenter = (string) $commenter;
+  $text = (string) $text;
+  $resolvedStatus = (string) $resolvedStatus;
   
   //I NEED TO RESET DB, PUT AUTO_INCREMENT FOR ITEMID
-  $reg_query = "INSERT INTO Item(relatedCheckList, completedStatus, content, completor) VALUES ( '$relatedCheckList', '$completedStatus', '$content', '$completor');";
+  $reg_query = "INSERT INTO Comment(relatedCard, timestamp, commenter, text, resolvedStatus) VALUES ( '$relatedCard', '$timestamp', '$commenter', '$text', '$resolvedStatus');";
 
 
   if(mysqli_query($conn, $reg_query))
   {
-    $itemId = mysqli_insert_id($conn);
+    $commentId = mysqli_insert_id($conn);
     $result->status = "success";
-    $result->itemId = $itemId;
+    $result->commentId = $commentId;
   }
   else
   {
     $result->status = "fail";
-    $result->itemId = "";
+    $result->commentId = "";
   }
 
   //output in the form
-  //{"status": "success", "itemId": "12345"}
+  //{"status": "success", "commentId": "12345"}
 
   $json_res = json_encode($result);
   echo $json_res;
