@@ -7,6 +7,9 @@
 
   include('utils/config.php');
 
+  //Give me inputs as in these POST functions
+  //-----------
+
   $name = $_POST['name'];
 
   //Should be either 'True' or 'False'

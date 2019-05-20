@@ -7,6 +7,9 @@
 
   include('utils/config.php');
 
+  //Give me inputs as in these POST functions
+  //-----------
+
   $name = $_POST['name'];
   $priority = $_POST['priority'];
   $description = $_POST['description'];
