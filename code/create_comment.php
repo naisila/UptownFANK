@@ -22,7 +22,7 @@
   $content = (string) $content;
   $completor = (string) $completor;
   
-  //I NEED TO RESET DB, PUT AUTO_INCREMENT FOR ITEMID ---- DONE
+  //I NEED TO RESET DB, PUT AUTO_INCREMENT FOR ITEMID
   $reg_query = "INSERT INTO Item(relatedCheckList, completedStatus, content, completor) VALUES ( '$relatedCheckList', '$completedStatus', '$content', '$completor');";
 
 
