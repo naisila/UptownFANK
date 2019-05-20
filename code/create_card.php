@@ -34,10 +34,10 @@
   else
   {
     $result->status = "fail";
-    $result->listId = "";
+    $result->cardId = "";
   }
 
-  //{"status": "success", "userID": "12345"}
+  //{"status": "success", "boardID": "12345"}
 
   $json_res = json_encode($result);
   echo $json_res;
