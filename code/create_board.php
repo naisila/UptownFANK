@@ -40,7 +40,7 @@
 
     //insert into works on
     $query = "INSERT INTO WorksOn(boardID, teamID) VALUES('$boardId', '$teamId');";
-    ysqli_query($conn, $query)
+    mysqli_query($conn, $query);
   }
   else
   {
