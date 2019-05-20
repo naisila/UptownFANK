@@ -94,13 +94,60 @@
                                                 <div class="input-group mb-3">
                                                     <input type="text" class="form-control" placeholder="Enter Team name" aria-label="Team Name" id="teamName">
                                                     <input type="text" class="form-control" placeholder="Enter Affiliation" aria-label="Affiliation" id="affiliation">
-                                                    <input type="number" class="form-control" placeholder="Enter a Unique Key to Access the Team" aria-label="Team Key" id="teamKey">
+                                                    <input type="text" class="form-control" placeholder="Enter a Unique Key to Access the Team" aria-label="Team Key" id="teamKey">
                                                     <button type="button" class="btn btn-success" id="submitTeam">Create</button>
                                                 </div>                           
                                             </div>
                                         </div>
                     
                                         <div class="accordion" id="accordionTeams">
+                                        </div>
+
+                                        <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="addModal">
+                                          <div class="modal-dialog modal-xl">
+                                            <div class="modal-content">
+                                              <div class="card">
+                                                  <form id="menuItemUpdateForm">
+                                                      <div class="form-row">
+                                                        <div class="col-md-4 mb-3">
+                                                          <label for="inputBName">Board Name</label>
+                                                          <input type="text" class="form-control" id="inputBName" placeholder="Board Name" required>
+                                                        </div>
+                                                        <div class="col-md-4 mb-3">
+                                                          <label for="inputDesc">Description</label>
+                                                          <input type="text" class="form-control" id="inputDesc" placeholder="Description" required>
+                                                        </div>
+                                                        <div class="col-md-4 mb-3">
+                                                          <label for="inputPriority">Priority</label>
+                                                          <div class="input-group">
+                                                            <input type="number" class="form-control" id="inputPriority" placeholder="Priority" required>
+                                                          </div>
+                                                          
+                                                        </div>
+                                                      </div>
+                                                      <div class="form-row">
+                                                        <div class="col-md-4 mb-3">
+                                                          <label for="inputColor">Color</label>
+                                                          <input type="color" class="form-control" id="inputColor" required>
+                                                        </div>
+                                                        <div class="col-md-4 mb-3">
+                                                          <label for="inputReqs">Requirements</label>
+                                                          <div class="input-group">
+                                                              <input type="text" class="form-control" id="inputReqs" required>
+                                                          </div>             
+                                                        </div>
+                                                        <div class="col-md-4 mb-3">
+                                                          <label for="inputET">Estimated Time</label>
+                                                          <div class="input-group">
+                                                              <input type="date" class="form-control" id="inputET" aria-describedby="inputGroupPrepend4U" required>
+                                                          </div>             
+                                                        </div>
+                                                      </div>
+                                                      <button class="btn btn-primary" id="submitBoard">Create Board</button>
+                                                    </form>
+                                              </div>
+                                            </div>
+                                          </div>
                                         </div>
                                 </div>
                                 <div class="tab-pane" id="Profile" role="tabpanel" aria-labelledby="profile-tab">

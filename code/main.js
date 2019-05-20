@@ -245,6 +245,43 @@ function createTeamCard(teamName, response){
 
 }
 
+document.getElementById("submitBoard").addEventListener("click", function() {
+
+    var teamId = gTeamId
+    var name = document.getElementById("inputBName").value
+    var description = document.getElementById("inputDesc").value
+    var priority = document.getElementById("inputPriority").value
+    var color = document.getElementById("inputColor").value
+    var requirements = document.getElementById("inputReqs").value
+    var ET = document.getElementById("inputET").value
+
+
+    $.post("create_board.php",
+    { teamId: teamId, name: name, description: description, priority: priority, color: color, requirements: requirements, ET: ET},
+    function(response){
+        pResponse = JSON.parse(response)
+        console.log(pResponse.status)
+        if(pResponse.status == "success"){
+            createBoardCard(teamId, color, pResponse)
+        }
+        else{
+            alert("There was some error with Adding a new Board")
+        }
+    });
+
+  
+    $("#inputBName").value = ""
+    $("#inputDesc").value = ""
+    $("#inputPriority").value = ""
+    $("#inputColor").value = ""
+    $("#inputReqs").value = ""
+    $("#inputET").value = ""
+  
+    $(gAddButton).trigger("click")
+  
+})
+  
+
 function openElement(evt, cityName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
