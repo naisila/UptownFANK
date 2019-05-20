@@ -11,11 +11,12 @@
   //-----------
   $userId = $_POST['userId'];
   $boardId= $_POST['boardId'];
+  //-----------
 
   $userId = (string) $userId;
   $boardId = (string) $boardId;
 
-  $reg_query = " CREATE VIEW AssignedCards AS ((SELECT C.name, C.priority, C.description, C.duedate FROM (SELECT cardID FROM PerformsTask P WHERE P.userID = '@userId' ) WHERE B.boardID = '@boardId' AND L.boardID = '@boardId') NATURAL JOIN Card C NATURAL JOIN List L NATURAL JOIN Board B);";
+  $reg_query = "SELECT C.name, C.priority, C.description, C.dueDate FROM (SELECT cardID FROM PerformsTask P WHERE P.userID = '@userId' ) AS cards NATURAL JOIN Card C NATURAL JOIN List L NATURAL JOIN Board B WHERE B.boardID = '@boardId' ;";
 
    if(mysqli_query($conn, $reg_query))
   {
