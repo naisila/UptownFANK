@@ -38,7 +38,8 @@
     $result->listId = "";
   }
 
-  //{"status": "success", "cardID": "12345"}
+  //output in the form
+  //{"status": "success", "listId": "12345"}
 
   $json_res = json_encode($result);
   echo $json_res;
