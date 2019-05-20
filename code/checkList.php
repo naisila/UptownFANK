@@ -9,8 +9,6 @@
 
   //Give me inputs as in these POST functions
   //-----------
-
-checklistID, name, checkStatus, description, relatedCard
   $name = $_POST['name'];
 
   //Should be either 'True' or 'False'
