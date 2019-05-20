@@ -1,6 +1,6 @@
 <?php
 /**
- * Registration Procedure
+ * Create Team Procedure
  * @author Naisila Puka
  * @version 19/05/2019
  */
