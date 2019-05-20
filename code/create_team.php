@@ -1,6 +1,6 @@
 <?php
 /**
- * Registration Procedure
+ * Create Team Procedure
  * @author Naisila Puka
  * @version 19/05/2019
  */
@@ -29,10 +29,10 @@
   else
   {
     $result->status = "fail";
-    $result->userID = "";
+    $result->teamId = "";
   }
 
-  //{"status": "success", "userID": "12345"}
+  //{"status": "success", "teamId": "12345"}
 
   $json_res = json_encode($result);
   echo $json_res;

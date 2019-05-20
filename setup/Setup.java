@@ -55,7 +55,7 @@ public class Setup
 			
 			String createCheckList = "CREATE TABLE CheckList (checklistID INTEGER PRIMARY KEY AUTO_INCREMENT, relatedCard INTEGER, name VARCHAR(50) NOT NULL, checkStatus VARCHAR(5), CHECK (checkStatus IN ('True','False')), description VARCHAR(1000) NOT NULL, FOREIGN KEY (relatedCard) REFERENCES Card (cardID)) ENGINE=INNODB;";
 			
-			String createItem = "CREATE TABLE Item (itemID INTEGER PRIMARY KEY, relatedCheckList INTEGER NOT NULL, completedStatus VARCHAR(5), content VARCHAR(1000) NOT NULL, completor INTEGER NOT NULL, CHECK (completedStatus IN ('True','False')), FOREIGN KEY (relatedCheckList) REFERENCES CheckList (checklistID), FOREIGN KEY (completor) REFERENCES BasicUser (userID)) ENGINE=INNODB;";
+			String createItem = "CREATE TABLE Item (itemID INTEGER PRIMARY KEY AUTO_INCREMENT, relatedCheckList INTEGER NOT NULL, completedStatus VARCHAR(5), content VARCHAR(1000) NOT NULL, completor INTEGER NOT NULL, CHECK (completedStatus IN ('True','False')), FOREIGN KEY (relatedCheckList) REFERENCES CheckList (checklistID), FOREIGN KEY (completor) REFERENCES BasicUser (userID)) ENGINE=INNODB;";
 			
 			String createComment = "CREATE TABLE Comment (commentID INTEGER AUTO_INCREMENT, relatedCard INTEGER NOT NULL, timestamp TIMESTAMP NOT NULL, resolvedStatus VARCHAR(5), commenter INTEGER NOT NULL, text VARCHAR(1000) NOT NULL, PRIMARY KEY (commentID, relatedCard), FOREIGN KEY (relatedCard) REFERENCES Card (cardID), FOREIGN KEY (commenter) REFERENCES BasicUser (userID), CHECK (resolvedStatus IN ('True','False'))) ENGINE=INNODB;";
 			
