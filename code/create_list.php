@@ -8,6 +8,8 @@
   include('utils/config.php');
 
   $name = $_POST['name'];
+
+  //Should be either 'True' or 'False'
   $finishedStatus = $_POST['finishedStatus'];
   $color = $_POST['color'];
   $description = $_POST['description'];
