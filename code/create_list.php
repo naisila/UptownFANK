@@ -13,10 +13,9 @@
   $description = $_POST['description'];
   $activity = $_POST['activity'];
   $boardId = $_POST['boardId'];
-
  
   $name = (string) $name;
-  $fisnishedStatus = (string) $finishedStatus;
+  $finishedStatus = (string) $finishedStatus;
   $color = (string) $color;
   $description = (string) $description;
   $activity = (string) $activity;
@@ -27,14 +26,14 @@
 
   if(mysqli_query($conn, $reg_query))
   {
-    $listID = mysqli_insert_id($conn);
+    $listId = mysqli_insert_id($conn);
     $result->status = "success";
     $result->listId = $listId;
   }
   else
   {
     $result->status = "fail";
-    $result->boardID = "";
+    $result->listId = "";
   }
 
   //{"status": "success", "userID": "12345"}
