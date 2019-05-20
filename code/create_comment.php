@@ -1,6 +1,6 @@
 <?php
 /**
- * Create Item Procedure
+ * Create Comment Procedure
  * @author Naisila Puka
  * @version 20/05/2019
  */
@@ -12,7 +12,7 @@
   $relatedCard = $_POST['relatedCard'];
 
   //CAUTION: TIMESTAMP FORMAT IN '2038-01-19 03:14:07'
-  $timestamp = $_POST['tiemestamp'];
+  $timestamp = $_POST['timestamp'];
 
   //In form of 'True' or 'False'
   $resolvedStatus = $_POST['resolvedStatus'];
