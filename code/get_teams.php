@@ -1,6 +1,6 @@
 <?php
 /**
- * Create Board Procedure
+ * View all teams where user is member Procedure
  * @author Naisila Puka
  * @version 20/05/2019
  */
@@ -14,26 +14,31 @@
 
   $userId = (string) $userId;
 
-  $reg_query = "INSERT INTO Board(name, description, priority, color, requirements, estimatedTime, ownerID) VALUES ( '$name', '$description', '$priority', '$color', '$requirements', '$estimatedTime', '$ownerId');";
+  $reg_query = "SELECT T.name, T.affiliation, T.supervisor,( CASE WHEN T.supervisor = '$userId' THEN 'True' ELSE 'False' END) AS isSupervisor FROM Team T JOIN Member M ON (T.teamID = M.teamID) WHERE M.userID = '$userId';";
+  $return_arr = array();
 
   if(mysqli_query($conn, $reg_query))
   {
-    $boardId = mysqli_insert_id($conn);
     $result->status = "success";
-    $result->boardId = $boardId;
-
-    //insert into works on
-    $query = "INSERT INTO WorksOn(boardID, teamID) VALUES('$boardId', '$teamId');";
-    mysqli_query($conn, $query);
+    $result = json_encode($result);
+    array_push($return_arr, $result);
+    while ($row = mysql_fetch_array($reg_query, MYSQL_ASSOC)) {
+      $row_array->name = $row['name'];
+      $row_array->affiliation = $row['affiliation'];
+      $row_array->supervisor = $row['supervisor'];
+      $row_array->isSupervisor = $row['isSupervisor'];
+      $row_array = json_encode($row_array);
+      array_push($return_arr, $row_array);
+    }
   }
   else
   {
     $result->status = "fail";
-    $result->boardId = "";
+    $result = json_encode($result);
+    array_push($return_arr, $result);
   }
 
-  //{"status": "success", "boardId": "12345"}
-
-  $json_res = json_encode($result);
-  echo $json_res;
+  //output in this form
+  //[{"status": "success"}, {"name": "Team1", "affiliation": "Bilkent", "supervisor": "Naisila", "isSupervisor": "True"}, ...]
+  echo $return_arr;
 ?>
