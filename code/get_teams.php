@@ -18,24 +18,22 @@
   
   $return_arr = array();
 
-  if(mysqli_query($conn, $reg_query))
+  $reg_query = mysqli_query($conn, $reg_query);
+  if($reg_query)
   {
     $result->status = "success";
-    //$result = json_encode($result);
-    //array_push($return_arr, $result);
-    //$row = mysql_fetch_array($reg_query, MYSQL_ASSOC)
-
-      $row = mysql_fetch_array($reg_query, MYSQL_ASSOC);
-    // while ($row = mysql_fetch_array($reg_query, MYSQL_ASSOC)) {
-    //   $row_array->teamId = $row['teamID'];
-    //   $row_array->name = $row['name'];
-    //   $row_array->affiliation = $row['affiliation'];
-    //   $row_array->supervisor = $row['supervisor'];
-    //   $row_array->isSupervisor = $row['isSupervisor'];
-    //   $row_array = json_encode($row_array);
-    //   array_push($return_arr, $row_array);
-    // }
-    $result->data = $reg_query;
+    $result = json_encode($result);
+    array_push($return_arr, $result);
+     while ($row = mysql_fetch_array($reg_query, MYSQL_ASSOC)) {
+       $row_array->teamId = $row['teamID'];
+       $row_array->name = $row['name'];
+       $row_array->affiliation = $row['affiliation'];
+       $row_array->supervisor = $row['supervisor'];
+       $row_array->isSupervisor = $row['isSupervisor'];
+       $row_array = json_encode($row_array);
+       array_push($return_arr, $row_array);
+     }
+    $result->data = $return_arr;
   }
   else
   {
