@@ -33,7 +33,7 @@
       $row_array = json_encode($row_array);
       array_push($return_arr, $row_array);
     }
-    $result->data = $return_arr;
+    $result->data = $row;
   }
   else
   {
