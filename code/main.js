@@ -138,6 +138,7 @@ btnAuth.addEventListener("click", function(e) {
                 pResponse = JSON.parse(response)
                 if(pResponse.status == "success"){
                     hideLoginPage()
+                    getTeams(userId)
                     gUserId = pResponse.userID
                     alert("Successfully logged in")
                 }
@@ -549,4 +550,19 @@ function createActualCard(pResponse, name, priority, description, dueDate, finis
 
 }
 
-//fade animation
+function getTeams(userId){
+
+    $.post("get_teams.php",
+    {userId: userId},
+    function(response){
+        pResponse = JSON.parse(response)
+        console.log(pResponse.status)
+        if(pResponse.status == "success"){
+            createActualCard(pResponse, name, priority, description, dueDate, finished, archived, listId)
+        }
+        else{
+            alert("There was some error with Adding a new Card")
+        }
+    });
+
+}
