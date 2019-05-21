@@ -20,8 +20,8 @@
   if(mysqli_query($conn, $reg_query))
   {
     $result->status = "success";
-    $result = json_encode($result);
-    array_push($return_arr, $result);
+    //$result = json_encode($result);
+    //array_push($return_arr, $result);
     while ($row = mysql_fetch_array($reg_query, MYSQL_ASSOC)) {
       $row_array->name = $row['name'];
       $row_array->affiliation = $row['affiliation'];
@@ -30,15 +30,17 @@
       $row_array = json_encode($row_array);
       array_push($return_arr, $row_array);
     }
+    $result->data = $return_arr;
   }
   else
   {
     $result->status = "fail";
-    $result = json_encode($result);
-    array_push($return_arr, $result);
+    $result->data = "";// = json_encode($result);
+    //array_push($return_arr, $result);
   }
 
   //output in this form
   //[{"status": "success"}, {"name": "Team1", "affiliation": "Bilkent", "supervisor": "Naisila", "isSupervisor": "True"}, ...]
+  $result = json_encode($result);
   echo $return_arr;
 ?>
