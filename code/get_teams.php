@@ -14,13 +14,13 @@
 
   $userId = (string) $userId;
 
-  $reg_query = "SELECT T.teamID, T.name, T.affiliation, T.supervisor,( CASE WHEN T.supervisor = '$userId' THEN 'True' ELSE 'False' END) AS isSupervisor FROM Team T JOIN Member M ON (T.teamID = M.teamID) WHERE M.userID = '$userId';";
+  $reg_query = "SELECT * FROM Team;";
   
   $return_arr = array();
 
   $res = mysqli_query($conn, $reg_query);
 
-  if($reg_query)
+  if($res)
   {
     $result->status = "success";
     //$result = json_encode($result);
