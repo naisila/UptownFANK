@@ -1,21 +1,21 @@
 <?php
 /**
- * Add member Procedure
- * @author Naisila Puka
+ * Creating card 
+ * @author Kunduz Efronova
  * @version 20/05/2019
  */
+
   include('utils/config.php');
+
   //Give me inputs as in these POST functions
   //-----------
-  $email = $_POST['email'];
   $teamId = $_POST['teamId'];
   //-----------
-  $email = (string) $email;
+
   $teamId = (string) $teamId;
-  $reg_query = "SELECT userID FROM BasicUser WHERE email = '$email';";
-  $res = mysqli_query($conn, $reg_query);
-  $userId = $res->fetch_assoc()["userID"];
-  $reg_query = "INSERT INTO Member(userID, teamID) VALUES('$userId', '$teamId');";
+
+  $reg_query = "DELETE FROM Team WHERE teamID = '$teamId';";
+
   if(mysqli_query($conn, $reg_query))
   {
     $result->status = "success";
@@ -24,7 +24,10 @@
   {
     $result->status = "fail";
   }
-  //{"status": "success"}
+
+  //output in the form
+  //{"status": "success", "cardId": "12345"}
+
   $json_res = json_encode($result);
   echo $json_res;
 ?>
