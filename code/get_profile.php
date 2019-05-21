@@ -15,7 +15,7 @@
   $userId = (string) $userId;
 
 
-  $reg_query = "SELECT * FROM BasicUser WHERE userId = '$userId';";
+  $reg_query = "SELECT * FROM BasicUser WHERE userID = '$userId';";
   $res = mysqli_query($conn, $reg_query);
 
   if(mysqli_query($conn, $reg_query))
