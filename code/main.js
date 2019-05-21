@@ -225,7 +225,42 @@ function createTeamCard(teamName, teamId){
     gAddButton = addButton
   })
 
-  h5.append(addButton)
+  var delButton = document.createElement("a")
+  delButton.className = "btn btn-danger"
+  delButton.innerText = "Delete Team"
+  delButton.setAttribute("href", "#")
+  delButton.addEventListener("click", function() {
+
+    $.post("delete_team.php",
+    {teamId: teamId},
+    function(response){
+        pResponse = JSON.parse(response)
+        console.log(pResponse.status)
+        if(pResponse.status == "success"){
+            deleteNode(teamId)
+        }
+        else{
+            alert("There was some error with Deleting a Team")
+        }
+    });
+    })
+
+
+    var addMember = document.createElement("a")
+    addMember.className = "btn btn-success"
+    addMember.innerText = "Add Member"
+    addMember.setAttribute("href", "#")
+    addMember.setAttribute("data-toggle", "modal")
+    addMember.setAttribute("data-target","#memberModal")
+    addMember.addEventListener("click", function() {
+        gTeamId = teamId
+        gAddButton = addMember
+
+    })
+
+
+
+  h5.append(addButton, addMember, delButton)
 
   cardHeader.append(h5)
 
@@ -293,6 +328,32 @@ document.getElementById("submitBoard").addEventListener("click", function() {
   
 })
 
+document.getElementById("submitMember").addEventListener("click", function() {
+
+    var teamId = gTeamId
+    var email = document.getElementById("inputMemberEmail").value
+
+
+    $.post("add_member.php",
+    {teamId: teamId, email: email},
+    function(response){
+        pResponse = JSON.parse(response)
+        console.log(pResponse.status)
+        if(pResponse.status == "success"){
+            deleteNode(teamId)
+        }
+        else{
+            alert("There was some error while adding a Member")
+        }
+    });
+
+  
+    $("#inputMemberEmail").value = ""
+  
+    $(gAddButton).trigger("click")
+  
+})
+
 function createBoardCard(teamId, name, color, description, requirements, response){
     //alert("Now I am gonna create the board")
     var boardId = response.boardId
@@ -347,7 +408,21 @@ function populateBoard(boardId ,name, color){
         gBoardId = boardId 
 
     })
-    board.append(button)
+
+    var backButton = getBackButton()
+
+    backButton.addEventListener("click", function(){
+         
+
+        showMainMenu()
+        while (board.hasChildNodes()) {
+            board.removeChild(board.lastChild);
+        }
+        gBoard.removeChild(board)
+    })
+
+
+    board.append(backButton, button)
 
     gBoard = board
 
@@ -370,6 +445,16 @@ function getAddListButton(){
     column.append(button)
 
     return column
+}
+
+function getBackButton(){
+    var button = document.createElement("button")
+    button.type = "button"
+    button.className = "btn btn-warning backButton"
+    button.innerText = "Back to Main Menu"
+    button.setAttribute("href", "#")
+
+    return button
 }
 
 
@@ -577,4 +662,10 @@ function createTeamCards(response){
         //var cur = JSON.parse(element)
         createTeamCard(element.name, element.teamId)
     });
+}
+
+function deleteNode(nodeId){
+    var node = document.getElementById(nodeId)
+    var parent = node.parentNode
+    parent.removeChild(node)
 }
