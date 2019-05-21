@@ -32,7 +32,7 @@
   $listId = (string) $listId;
   $dueDate = (string) $dueDate;
 
-  $reg_query = "INSERT INTO List(name, priority, description, dueDate, listID, archived, finished) VALUES ( '$name', '$priority', '$description', '$dueDate', '$listId', '$archived', '$finished');";
+  $reg_query = "INSERT INTO Card(name, priority, description, dueDate, listID, archived, finished) VALUES ( '$name', '$priority', '$description', '$dueDate', '$listId', '$archived', '$finished');";
 
   if(mysqli_query($conn, $reg_query))
   {
