@@ -25,7 +25,7 @@
     $result->status = "success";
     //$result = json_encode($result);
     //array_push($return_arr, $result);
-    while ($row = mysql_fetch_array($reg_query, MYSQL_ASSOC)) {
+    while ($row = mysql_fetch_array($res, MYSQL_ASSOC)) {
       $row_array->teamId = $row['teamID'];
       $row_array->name = $row['name'];
       $row_array->affiliation = $row['affiliation'];
@@ -34,7 +34,7 @@
       $row_array = json_encode($row_array);
       array_push($return_arr, $row_array);
     }
-    $result->data = $res;
+    $result->data = $return_arr;
   }
   else
   {
