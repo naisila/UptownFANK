@@ -448,7 +448,7 @@ function createListCard(name, response){
 
     var button = document.createElement("button")
     button.type = button
-    button.className = "btn btn-outline-primary"
+    button.className = "btn btn-outline-primary list-btn"
     button.innerText = "+ Add another card"
     button.setAttribute("href", "#")
     button.setAttribute("data-toggle", "modal")
@@ -484,8 +484,15 @@ function createListCard(name, response){
 
     cardWrapper.append(cardHeader, cardBody)
 
+    
+
     column.append(cardWrapper)
-    gBoard.prepend(column)
+
+    var child = gBoard.lastChild
+    gBoard.removeChild(child)
+
+    gBoard.append(column)
+    gBoard.append(child)
     
 }
 
@@ -526,13 +533,19 @@ document.getElementById("submitCard").addEventListener("click", function() {
 function createActualCard(pResponse, name, priority, description, dueDate, finished, archived){
 
     var listItem = document.createElement("li")
-    listItem.className = "list-group-item list-group-item-dark"
+    //listItem.className = "list-group-item list-group-item-dark"
 
-    listItem.innerText = name
+    //listItem.innerText = name
+
+    var button = document.createElement("button")
+    button.type = button
+    button.className = "btn btn-secondary list-btn"
+    button.innerText = name
+    button.setAttribute("href", "#")
 
     var parent = document.getElementById(listId)
 
-    parent.prepend(listItem)
+    parent.prepend(button)
 
 }
 
