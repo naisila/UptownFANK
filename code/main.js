@@ -340,7 +340,7 @@ document.getElementById("submitMember").addEventListener("click", function() {
         pResponse = JSON.parse(response)
         console.log(pResponse.status)
         if(pResponse.status == "success"){
-            deleteNode(teamId)
+            alert("Successfully added a member")
         }
         else{
             alert("There was some error while adding a Member")
