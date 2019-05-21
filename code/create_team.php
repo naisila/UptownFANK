@@ -25,8 +25,10 @@
     $teamId = mysqli_insert_id($conn);
     $result->status = "success";
     $result->teamId = $teamId;
-    //$query = "INSERT INTO Member(userID, teamID) VALUES ('$userId', '$teamId');";
-    //mysqli_query($conn, $query)
+
+    //insert into member
+    $query = "INSERT INTO Member(userID, teamID) VALUES('$userId', '$teamId');";
+    mysqli_query($conn, $query);
   }
   else
   {
