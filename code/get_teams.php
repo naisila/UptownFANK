@@ -42,5 +42,5 @@
   //output in this form
   //[{"status": "success"}, {"name": "Team1", "affiliation": "Bilkent", "supervisor": "Naisila", "isSupervisor": "True"}, ...]
   $result = json_encode($result);
-  echo $return_arr;
+  echo $result;
 ?>
