@@ -665,13 +665,6 @@ document.getElementById("updateUser").addEventListener("click", function() {
             alert("There was some error updating a User")
         }
     });
-
-    $("#inputCName").value = ""
-    $("#inputCPriority").value = ""
-    $("#inputCDesc").value = ""
-    $("#inputDD").value = ""
-  
-    $(gAddButton).trigger("click")
   
 })
 
