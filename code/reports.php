@@ -23,4 +23,25 @@
                                               echo '</tr>';
                                               }
                                               echo '</table>';
+
+    $result = mysqli_query($conn, 'SELECT u.name, u.email FROM BasicUser u WHERE NOT EXISTS(
+SELECT t.teamID FROM Team t WHERE t.supervisor = @particularID AND t.teamID NOT IN
+(SELECT m.teamID FROM Member m WHERE m.userID = u.userID));');
+    echo'<br>';
+    echo'This report shows users who are part of all projects supervised by a particular user:';
+    echo'<br>';
+    echo '<table border="1">
+        <tr>
+          <th>User Name</th>
+          <th>User Email</th>
+        </tr>';
+
+                                              while($row = mysqli_fetch_array($result))
+                                              {
+                                              echo '<tr>';
+                                              echo '<td>' . $row["name"] . '</td>';
+                                              echo '<td>' . $row["email"] . '</td>';
+                                              echo '</tr>';
+                                              }
+                                              echo '</table>';
 ?>
