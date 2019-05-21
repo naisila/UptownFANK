@@ -11,7 +11,7 @@ UptownFANK is a project tracking software created as a database application. It 
 You may find our application's user's manual and other helpful information at out official [final report](https://uptownfank.github.io/reports/Final_Report%20(1).pdf).
 
 ## How It Looks
-Below you may find examples of Log In page and the list of all boards you will be able to keep track of if you use this application. What are you waiting for? :smile:
+Below you may find examples of Log In page and the list of all boards you will be able to keep track of if you use this application. What are you waiting for? :smile: [Join UptownFANK now!](http://dijkstra.cs.bilkent.edu.tr/~naisila.puka/UptownFANK/code/)
 
 <img src="https://i.ibb.co/ydxjh9G/loginpage.png" alt="uptownfank_log_in" width="700"/>
 
