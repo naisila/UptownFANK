@@ -645,9 +645,9 @@ document.getElementById("submitCard").addEventListener("click", function() {
 document.getElementById("updateUser").addEventListener("click", function() {
 
     var userId = gUserId
-    var name = document.getElementById("inputNewName")
-    var address = document.getElementById("inputNewAddress")
-    var email = document.getElementById("inputNewEmail")
+    var name = document.getElementById("inputNewName").value
+    var address = document.getElementById("inputNewAddress").value
+    var email = document.getElementById("inputNewEmail").value
 
 
 
