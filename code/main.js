@@ -138,8 +138,8 @@ btnAuth.addEventListener("click", function(e) {
                 pResponse = JSON.parse(response)
                 if(pResponse.status == "success"){
                     hideLoginPage()
-                    getTeams(userId)
                     gUserId = pResponse.userID
+                    getTeams(gUserId)
                     alert("Successfully logged in")
                 }
                 else{
@@ -178,7 +178,8 @@ function createTeam(teamName, mAffiliation, mKey){
     function(response){
         pResponse = JSON.parse(response)
         if(pResponse.status == "success"){
-            createTeamCard(teamName, pResponse)
+            var mTeamId = pResponse.teamId
+            createTeamCard(teamName, mTeamId)
         }
         else{
             alert("There was some error while creating a New Team")
@@ -186,9 +187,9 @@ function createTeam(teamName, mAffiliation, mKey){
     });
 }
 
-function createTeamCard(teamName, response){
+function createTeamCard(teamName, teamId){
   var name = teamName
-  var teamId = response.teamId
+  var teamId = teamId
 
   var card = document.createElement("div")
   card.className = "card"
@@ -556,13 +557,21 @@ function getTeams(userId){
     {userId: userId},
     function(response){
         pResponse = JSON.parse(response)
-        console.log(pResponse.status)
+        console.log(pResponse)
         if(pResponse.status == "success"){
-            createActualCard(pResponse, name, priority, description, dueDate, finished, archived, listId)
+            createTeamCards(pResponse)
         }
         else{
-            alert("There was some error with Adding a new Card")
+            alert("There was some error while fetching cards")
         }
     });
 
+}
+
+function createTeamCards(response){
+    var teams = response.data
+
+    teams.forEach(element => {
+        createTeamCard(element.name, element.teamId)
+    });
 }
