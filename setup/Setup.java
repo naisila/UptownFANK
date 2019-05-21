@@ -68,6 +68,11 @@ public class Setup
 			String createLabel = "CREATE TABLE Label (labelID INTEGER PRIMARY KEY AUTO_INCREMENT, color VARCHAR(50) NOT NULL, text VARCHAR(100) NOT NULL, importance INTEGER CHECK (0 < importance <= 5), adder INTEGER NOT NULL, FOREIGN KEY (adder) REFERENCES BasicUser (userID)) ENGINE=INNODB;";
 			
 			String createLabelling = "CREATE TABLE Labelling (cardID INTEGER NOT NULL, labelID INTEGER NOT NULL, PRIMARY KEY (cardID, labelID),FOREIGN KEY (cardID) REFERENCES Card (cardID), FOREIGN KEY (labelID) REFERENCES Label (labelID));";
+
+			String addSecondaryIndex_Board = "CREATE INDEX secondary_board_priority ON Board(priority);";
+
+			String addSecondaryIndex_Card = "CREATE INDEX secondary_board_priority ON Card(priority);";
+
 	        // Check if tables already exist
 			DatabaseMetaData meta = conn.getMetaData();
 			stmt = conn.createStatement();
