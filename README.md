@@ -15,8 +15,8 @@ Below you may find examples of Log In page and the list of all boards you will b
 
 <img src="https://i.ibb.co/ydxjh9G/loginpage.png" alt="uptownfank_log_in" width="700"/>
 
-Log In
+**Log In**
 
 <img src="https://i.ibb.co/1fTqD4d/boards.png" alt="uptownfank_boards" width="700"/>
 
-Boards' View
+**Boards' View**
