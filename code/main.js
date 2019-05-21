@@ -659,7 +659,7 @@ document.getElementById("updateUser").addEventListener("click", function() {
         if(pResponse.status == "success"){
             nameField.value = name
             addressField.value = address
-            emailField = email
+            emailField.value = email
         }
         else{
             alert("There was some error updating a User")
