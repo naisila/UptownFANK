@@ -313,7 +313,7 @@ document.getElementById("submitBoard").addEventListener("click", function() {
         pResponse = JSON.parse(response)
         console.log(pResponse.status)
         if(pResponse.status == "success"){
-            createBoardCard(teamId, name, color, description, requirements, pResponse)
+            createBoardCard(teamId, name, color, description, requirements, pResponse.boardId)
         }
         else{
             alert("There was some error with Adding a new Board")
@@ -358,9 +358,9 @@ document.getElementById("submitMember").addEventListener("click", function() {
   
 })
 
-function createBoardCard(teamId, name, color, description, requirements, response){
+function createBoardCard(teamId, name, color, description, requirements, mboardId){
     //alert("Now I am gonna create the board")
-    var boardId = response.boardId
+    var boardId = mboardId
 
     var cardWrapper = document.createElement("div")
     cardWrapper.setAttribute("style", "18rem")
@@ -664,7 +664,35 @@ function createTeamCards(response){
     teams.forEach(element => {
         //var cur = JSON.parse(element)
         createTeamCard(element.name, element.teamId)
+        getBoards(element.teamId)
     });
+}
+
+function getBoards(teamId){
+
+    $.post("get_boards.php",
+    {teamId: teamId},
+    function(response){
+        pResponse = JSON.parse(response)
+        console.log(pResponse)
+        if(pResponse.status == "success"){
+            createBoardCards(teamId, pResponse)
+        }
+        else{
+            alert("There was some error while fetching boards")
+        }
+    });
+
+}
+
+function createBoardCards(teamId, response){
+    var boards = response.data
+
+    boards.forEach(element => {
+        //var cur = JSON.parse(element)
+        createBoardCard(teamId, element.name, element.color, element.description, element.requirements, element.boardID)
+    });
+
 }
 
 function deleteNode(nodeId){
