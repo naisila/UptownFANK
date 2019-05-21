@@ -31,8 +31,8 @@
       $row_array->description = $row['description'];
       $row_array->priority = $row['priority'];
       $row_array->color = $row['color'];
-      $row_array->requirements = $row['requirements'];;
-      $row_array->estimatedTime = $row['estimatedTime'];;
+      $row_array->requirements = $row['requirements'];
+      $row_array->estimatedTime = $row['estimatedTime'];
       array_push($return_arr, $row_array);
       $row_array = null;
     }

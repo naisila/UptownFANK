@@ -472,11 +472,12 @@ function getProfile(userId){
     { userId: userId},
     function(response){
         pResponse = JSON.parse(response)
+        console.log("Get Profile", pResponse)
         if(pResponse.status == "success"){
 
-            nameField.innerText = pResponse.name
-            emailField.innerText = pResponse.email
-            addressField.innerText = pResponse.address
+            nameField.value = pResponse.name
+            emailField.value = pResponse.email
+            addressField.value = pResponse.address
         }
         else{
             alert("Error fetching user")

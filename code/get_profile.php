@@ -16,14 +16,16 @@
 
 
   $reg_query = "SELECT * FROM BasicUser WHERE userID = '$userId';";
-  $res = mysqli_query($conn, $reg_query);
 
   if(mysqli_query($conn, $reg_query))
   {
+    $res = mysqli_query($conn, $reg_query);
+    $rows = mysqli_fetch_all($res, MYSQL_ASSOC);
+
     $result->status = "success";
-    $result->$name = $res->fetch_assoc()["name"];
-    $result->$address = $res->fetch_assoc()["address"];
-    $result->$email = $res->fetch_assoc()["email"];
+    $result->name = $rows[0]["name"];
+    $result->address = $rows[0]["address"];
+    $result->email = $rows[0]["email"];
   }
   else
   {
