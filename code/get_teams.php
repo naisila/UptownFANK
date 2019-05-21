@@ -30,9 +30,9 @@
       $row_array->name = $row['name'];
       $row_array->affiliation = $row['affiliation'];
       $row_array->supervisor = $row['supervisor'];
-      $row_array->isSupervisor = $row['isSupervisor'];
-      $row_array = json_encode($row_array);
+      $row_array->isSupervisor = $row['isSupervisor'];;
       array_push($return_arr, $row_array);
+      $row_array = null;
     }
     $result->data = $return_arr;
   }

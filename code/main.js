@@ -574,7 +574,7 @@ function createTeamCards(response){
     console.log("Teams are", teams)
 
     teams.forEach(element => {
-        var cur = JSON.parse(element)
-        createTeamCard(cur.name, cur.teamId)
+        //var cur = JSON.parse(element)
+        createTeamCard(element.name, element.teamId)
     });
 }
