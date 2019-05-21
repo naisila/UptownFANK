@@ -73,6 +73,8 @@ public class Setup
 
 			String addSecondaryIndex_Card = "CREATE INDEX secondary_board_priority ON Card(priority);";
 
+			String uniqueConstraint = "ALTER TABLE BasicUser ADD UNIQUE (email);"
+
 	        // Check if tables already exist
 			DatabaseMetaData meta = conn.getMetaData();
 			stmt = conn.createStatement();
