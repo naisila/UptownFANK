@@ -177,30 +177,26 @@
                                         <div class="tab-pane" id="Profile" role="tabpanel" aria-labelledby="profile-tab">
                                             <div class="wrapper fade-in">
                                             <h1>Profile </h1> <br>
-                                            <div class="tab">
-                                                <button class="tablinks" onclick="openElement(event, 'BasicInfo')" id="defaultOpen">Basic Info</button>
-                                                <button class="tablinks" onclick="openElement(event, 'Statistics')">Statistics</button>
-                                                <button class="tablinks" onclick="openElement(event, 'ect')">ect</button>
-                                            </div>
-                                            
-                                              <div id="BasicInfo" class="tabcontent">
-                                                <h3>Basic Info</h3>
-                                                <p>Name: Ali</p>
-                                                <p>Surname: Ali</p>
-                                                <p>Company: Ali</p>
+                                            <form>
+                                              <div class="form-group row">
+                                                <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+                                                <div class="col-sm-10">
+                                                  <input type="text" readonly class="form-control-plaintext" id="staticEmail">
+                                                </div>
                                               </div>
-                                              
-                                              <div id="Statistics" class="tabcontent">
-                                                <h3>Statistics</h3>
-                                                <p>Project finish rate: 89%</p>
-                                                <p>Project finish rate before deadline: 11%</p> 
-                                                <p>Coments per project: 54%</p> 
+                                              <div class="form-group row">
+                                                <label for="staticName" class="col-sm-2 col-form-label">Name</label>
+                                                <div class="col-sm-10">
+                                                  <input type="text" readonly class="form-control" id="staticName">
+                                                </div>
                                               </div>
-                                              
-                                              <div id="ect" class="tabcontent">
-                                                <h3>other info we can add</h3>
-                                                <p>Idk what we can add but we should add it here.</p>
+                                              <div class="form-group row">
+                                                <label for="staticAddress" class="col-sm-2 col-form-label">Address</label>
+                                                <div class="col-sm-10">
+                                                  <input type="text" readonly class="form-control" id="staticAddress">
+                                                </div>
                                               </div>
+                                            </form>
                                             </div>
                                         </div>
                                         <div class="tab-pane" id="About" role="tabpanel" aria-labelledby="about-tab">

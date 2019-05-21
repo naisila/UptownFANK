@@ -19,6 +19,9 @@ const mainMenu = document.getElementById("mainMenu")
 const boardPage = document.getElementById("boardPage")
 const baordModal = document.getElementById("cardModal")
 const listModal = document.getElementById("listModal")
+var nameField = document.getElementById("staticName")
+var emailField = document.getElementById("staticEmail")
+var addressField =document.getElementById("staticAddress")
 
 
 const registerMsg = "Dont have an account yet, Click here to register!"
@@ -121,7 +124,7 @@ btnAuth.addEventListener("click", function(e) {
                 if(pResponse.status == "success"){
                     hideLoginPage()
                     gUserId = pResponse.userID
-                    alert("Successfully registered")
+                    getProfile(pResponse.userID)
                     getReports()
                 }
                 else{
@@ -143,7 +146,7 @@ btnAuth.addEventListener("click", function(e) {
                     hideLoginPage()
                     gUserId = pResponse.userID
                     getTeams(pResponse.userID)
-                    alert("Successfully logged in")
+                    getProfile(pResponse.userID)
                     getReports()
                 }
                 else{
@@ -462,6 +465,24 @@ function getBackButton(){
     button.setAttribute("href", "#")
 
     return button
+}
+
+function getProfile(userId){
+    $.post("get_profile.php",
+    { userId: userId},
+    function(response){
+        pResponse = JSON.parse(response)
+        if(pResponse.status == "success"){
+
+            nameField.innerText = pResponse.name
+            emailField.innerText = pResponse.email
+            addressField.innerText = pResponse.address
+        }
+        else{
+            alert("Error fetching user")
+        }
+    });
+
 }
 
 
