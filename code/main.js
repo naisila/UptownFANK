@@ -570,8 +570,11 @@ function getTeams(userId){
 
 function createTeamCards(response){
     var teams = response.data
+    
+    console.log("Teams are", teams)
 
     teams.forEach(element => {
-        createTeamCard(element.name, element.teamId)
+        var cur = JSON.parse(element)
+        createTeamCard(cur.name, cur.teamId)
     });
 }

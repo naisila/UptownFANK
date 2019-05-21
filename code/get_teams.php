@@ -18,14 +18,14 @@
   
   $return_arr = array();
 
-  $res = mysqli_query($conn, $reg_query);
-
-  if($reg_query)
+  if(mysqli_query($conn, $reg_query))
   {
     $result->status = "success";
     //$result = json_encode($result);
     //array_push($return_arr, $result);
-    while ($row = mysql_fetch_array($reg_query, MYSQL_ASSOC)) {
+    $mean = mysqli_query($conn, $reg_query);
+    $rows = mysqli_fetch_all($mean, MYSQL_ASSOC);
+    foreach ($rows as $row) {
       $row_array->teamId = $row['teamID'];
       $row_array->name = $row['name'];
       $row_array->affiliation = $row['affiliation'];
@@ -34,7 +34,7 @@
       $row_array = json_encode($row_array);
       array_push($return_arr, $row_array);
     }
-    $result->data = $res;
+    $result->data = $return_arr;
   }
   else
   {
