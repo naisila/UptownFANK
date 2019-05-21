@@ -8,7 +8,7 @@
     $result = mysqli_query($conn,'SELECT t.name, B.name as supervisor, m.memberCount FROM Team t NATURAL JOIN membersNo m JOIN BasicUser B ON B.userID = t.supervisor WHERE m.memberCount >= ALL (SELECT memberCount FROM membersNo);');
 
     echo'<br>';
-    echo'This report shows The team with the largest number of members, along with its supervisor and
+    echo'This report shows the team with the largest number of members, along with its supervisor and
 the number of members:';
     echo'<br>';
     echo '<table border="1">
