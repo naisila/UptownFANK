@@ -25,7 +25,7 @@
                                               echo '</table>';
 
     $result = mysqli_query($conn, 'SELECT u.name, u.email FROM BasicUser u WHERE NOT EXISTS(
-SELECT t.teamID FROM Team t WHERE t.supervisor = @particularID AND t.teamID NOT IN
+SELECT t.teamID FROM Team t WHERE t.supervisor = 1 AND t.teamID NOT IN
 (SELECT m.teamID FROM Member m WHERE m.userID = u.userID));');
     echo'<br>';
     echo'This report shows users who are part of all projects supervised by a particular user:';
