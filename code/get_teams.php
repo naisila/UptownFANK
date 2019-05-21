@@ -19,6 +19,7 @@
   $return_arr = array();
 
   $reg_query = mysqli_query($conn, $reg_query);
+  
   if($reg_query)
   {
     $result->status = "success";
@@ -33,7 +34,7 @@
       $row_array = json_encode($row_array);
       array_push($return_arr, $row_array);
     }
-    $result->data = $row;
+    $result->data = $reg_query;
   }
   else
   {
