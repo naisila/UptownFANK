@@ -14,7 +14,7 @@
 
   $userId = (string) $userId;
 
-  $reg_query = "SELECT T.name, T.affiliation, T.supervisor,( CASE WHEN T.supervisor = '$userId' THEN 'True' ELSE 'False' END) AS isSupervisor FROM Team T JOIN Member M ON (T.teamID = M.teamID) WHERE M.userID = '$userId';";
+  $reg_query = "SELECT T.teamID, T.name, T.affiliation, T.supervisor,( CASE WHEN T.supervisor = '$userId' THEN 'True' ELSE 'False' END) AS isSupervisor FROM Team T JOIN Member M ON (T.teamID = M.teamID) WHERE M.userID = '$userId';";
   $return_arr = array();
 
   if(mysqli_query($conn, $reg_query))
@@ -23,6 +23,7 @@
     //$result = json_encode($result);
     //array_push($return_arr, $result);
     while ($row = mysql_fetch_array($reg_query, MYSQL_ASSOC)) {
+      $row_array->teamId = $row['teamID'];
       $row_array->name = $row['name'];
       $row_array->affiliation = $row['affiliation'];
       $row_array->supervisor = $row['supervisor'];
