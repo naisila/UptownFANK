@@ -386,7 +386,6 @@ function createBoardCard(teamId, name, color, description, requirements, mboardI
     cardText.innerText = requirements
 
     cardWrapper.addEventListener("click", function(){
-        window.alert("Board Clicked")
         populateBoard(boardId, name, color)
     })
 
