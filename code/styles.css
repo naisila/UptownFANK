@@ -52,6 +52,11 @@ width: 400px;
 /*whatever width you want*/
 }
 
+.container-fluid{
+  height: 100%;
+  width: 100%;
+}
+
 /* about css*/
 /* Three columns side by side */
 .column {
@@ -178,6 +183,10 @@ background-color: #f2f2f2;
 padding: 20px;
 
 }
+.board-row{
+  padding-top: 3%;
+  padding-left: 2%;
+}
 
 #logo {
 margin-bottom: 5%;
@@ -186,6 +195,8 @@ margin-bottom: 5%;
 a.btn-dark, a.btn-danger, a.btn-warning, a.btn-success, a.btn-info{
 margin-right: 10px
 }
+
+
 
 .new-table-btn{
 margin-top: 1.5%;
@@ -196,14 +207,10 @@ margin-top: 1.5%;
 margin-bottom: 1.5%;
 }
 
-#menuItemForm, #userInfoForm, #menuItemUpdateForm {
+#boardForm, #listForm, #cardForm {
 margin: 3%;
 }
 
-.card {
-margin-top: 2%;
-margin-bottom: 2%;
-}
 
 /* profile menu*/
 * {box-sizing: border-box}

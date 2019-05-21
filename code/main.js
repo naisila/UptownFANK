@@ -15,6 +15,8 @@ const newteam = document.getElementById("submitTeam")
 const teamName = document.getElementById("teamName")
 const affiliation = document.getElementById("affiliation")
 const teamKey = document.getElementById("teamKey")
+const mainMenu = document.getElementById("mainMenu")
+const boardPage = document.getElementById("boardPage")
 
 
 const registerMsg = "Dont have an account yet, Click here to register!"
@@ -25,6 +27,8 @@ const loginMsg = "Already registered, Click here to Login!"
 var gUserId;
 var gAddButton;
 var gTeamId;
+var gBoardId;
+var gBoard;
 
 window.onload = function() {
     initialSetup()
@@ -37,6 +41,7 @@ function initialSetup(){
     userSelection.style.display = "none"
     organization.parentNode.style.display = "none"
     insidePage.style.display = "none"
+    boardPage.style.display = "none"
 }
 
 btnAuthAlter.addEventListener("click", function (e){
@@ -145,8 +150,6 @@ btnAuth.addEventListener("click", function(e) {
 
     clearInputs()
 })
-
-
 
 
 function hideLoginPage(){
@@ -290,6 +293,7 @@ document.getElementById("submitBoard").addEventListener("click", function() {
 
 function createBoardCard(teamId, name, color, description, requirements, response){
     //alert("Now I am gonna create the board")
+    var boardId = response.boardId
 
     var cardWrapper = document.createElement("div")
     cardWrapper.setAttribute("style", "18rem")
@@ -311,6 +315,11 @@ function createBoardCard(teamId, name, color, description, requirements, respons
     var cardText = document.createElement("p")
     cardText.innerText = requirements
 
+    cardWrapper.addEventListener("click", function(){
+        window.alert("Board Clicked")
+        populateBoard(boardId, name, color)
+    })
+
     //Append Everything
     cardBody.append(cardTitle, cardText)
 
@@ -323,21 +332,208 @@ function createBoardCard(teamId, name, color, description, requirements, respons
     parent.append(cardWrapper)
     
 }
+
+function populateBoard(boardId ,name, color){
+    var board = document.createElement("div")
+    board.className = "row board-row"
+    var backgroundColor = "background-color:" + color
+
+    var button = getAddListButton()
+
+    button.addEventListener("click", function(){
+        gAddButton = button
+        gBoardId = boardId 
+
+    })
+    board.append(button)
+
+    gBoard = board
+
+    boardPage.append(board)
+    hideMainMenu(backgroundColor)
+}
+
+function getAddListButton(){
+    var column = document.createElement("div")
+    column.className = "col-sm-6"
+
+    var button = document.createElement("button")
+    button.type = "button"
+    button.className = "btn btn-light"
+    button.innerText = "+ Add another list"
+    button.setAttribute("href", "#")
+    button.setAttribute("data-toggle", "modal")
+    button.setAttribute("data-target","#listModal")
+
+    column.append(button)
+
+    return column
+}
+
+
+
   
 
 function openElement(evt, cityName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
+        tabcontent[i].style.display = "none";
     }
     tablinks = document.getElementsByClassName("tablinks");
     for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" active", "");
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
     document.getElementById(cityName).style.display = "block";
     evt.currentTarget.className += " active";
-  }
+}
 
+function hideMainMenu(backgroundColor){
+    mainMenu.style.display = "none"
+    boardPage.style.display = "block"
+    boardPage.setAttribute("style", backgroundColor)
+
+}
+
+function showMainMenu(){
+    boardPage.style.display = "none"
+    mainMenu.style.display = "block"
+}
+
+document.getElementById("submitList").addEventListener("click", function() {
+
+    var boardId = gBoardId
+    var name = document.getElementById("inputLName").value
+    var finishedStatus = false
+    var color = "grey"
+    var description = "Normal List"
+    var activity = "Normal Activity"
+
+
+
+    $.post("create_list.php",
+    { finishedStatus: finishedStatus, color: color, name: name, description: description, activity: activity, boardId: boardId},
+    function(response){
+        pResponse = JSON.parse(response)
+        console.log(pResponse.status)
+        if(pResponse.status == "success"){
+            createListCard(name, pResponse)
+        }
+        else{
+            alert("There was some error with Adding a new List")
+        }
+    });
+
+    $("#inputLName").value = ""
+  
+    $(gAddButton).trigger("click")
+  
+})
+
+function createListCard(name, response){
+    listId = response.listId
+
+    var column = document.createElement("div")
+    column.className = "col-sm-3"
+
+    var cardWrapper = document.createElement("div")
+    cardWrapper.className = "card bg-light mb-3"
+
+    var cardHeader = document.createElement("div")
+    cardHeader.className = "card-header"
+    cardHeader.innerText = name
+    
+    var cardBody = document.createElement("div")
+    cardBody.className = "card-body"
+
+    var button = document.createElement("button")
+    button.type = button
+    button.className = "btn btn-outline-primary"
+    button.innerText = "+ Add another card"
+    button.setAttribute("href", "#")
+    button.setAttribute("data-toggle", "modal")
+    button.setAttribute("data-target","#cardModal")
+
+    button.addEventListener("click", function(){
+        gListId = listId
+        gAddButton = button
+    })
+
+    var listGroup = document.createElement("ul")
+    listGroup.className = "list-group"
+    listGroup.id = listId
+
+    listGroup.append(button)
+
+    cardBody.append(listGroup)
+
+    /*
+    var cardTitle = document.createElement("h5")
+    cardTitle.className = "card-title"
+    cardTitle.innerText = description
+
+    */
+
+    /*
+    var cardText = document.createElement("p")
+    cardText.innerText = requirements
+    */
+
+    //Append Everything
+    //cardBody.append(cardTitle, cardText)
+
+    cardWrapper.append(cardHeader, cardBody)
+
+    column.append(cardWrapper)
+    gBoard.prepend(column)
+    
+}
+
+document.getElementById("submitCard").addEventListener("click", function() {
+
+    var listId = gListId
+    var name = document.getElementById("inputCName").value
+    var priority = document.getElementById("inputCPriority").value
+    var description = document.getElementById("inputCDesc").value
+    var dueDate = document.getElementById("inputDD").value
+    var finished = false
+    var archived = false
+
+
+
+    $.post("create_card.php",
+    {name: name, priority: priority, description: description, dueDate: dueDate, archived: archived, finished: finished, listId: listId},
+    function(response){
+        pResponse = JSON.parse(response)
+        console.log(pResponse.status)
+        if(pResponse.status == "success"){
+            createActualCard(pResponse, name, priority, description, dueDate, finished, archived, listId)
+        }
+        else{
+            alert("There was some error with Adding a new Card")
+        }
+    });
+
+    $("#inputCName").value = ""
+    $("#inputCPriority").value = ""
+    $("#inputCDesc").value = ""
+    $("#inputDD").value = ""
+  
+    $(gAddButton).trigger("click")
+  
+})
+
+function createActualCard(pResponse, name, priority, description, dueDate, finished, archived){
+
+    var listItem = document.createElement("li")
+    listItem.className = "list-group-item list-group-item-dark"
+
+    listItem.innerText = name
+
+    var parent = document.getElementById(listId)
+
+    parent.prepend(listItem)
+
+}
 
 //fade animation

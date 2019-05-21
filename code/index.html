@@ -9,301 +9,374 @@
     <title>Uptown FANK</title>
 </head>
 <body>
-    
-    <div class="containter" id="whole">
-            <div class="container" id="loginPage">
-                    <div class="outer">
-                            <div class="middle">
-                              <div class="inner">
-                                    <img src="../images/logo.png" class="img-thumbnail" id="logo">
-                                    <form>
-                                    <div class="form-group">
-                                        <label for="txtEmail">Email address</label>
-                                        <input type="email" class="form-control" id="txtEmail" aria-describedby="emailHelp" placeholder="Enter email">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="txtPassword">Password</label>
-                                        <input type="password" class="form-control" id="txtPassword" placeholder="Password">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="txtName">Name</label>
-                                        <input type="text" class="form-control" id="txtName" placeholder="Name">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="txtAddress">Address</label>
-                                        <input type="text" class="form-control" id="txtAddress" placeholder="Address">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="phoneNumber">Phone Number</label>
-                                        <input type="tel" class="form-control" id="phoneNumber" placeholder="Phone Number">
-                                    </div>
-                                    <div class="form-group" id="userSelection">
-                                        <label for="userType">User Type</label>
-                                        <div class="form-check" id="userType">
-                                            <input class="form-check-input" type="radio" name="userType" id="userType1" value="option1" checked>
-                                            <label class="form-check-label" for="userType1">
-                                               Basic User
-                                            </label>
+
+    <div class="container-fluid" id="whole">
+            <div class="containter" id="mainMenu">
+                    <div class="container" id="loginPage">
+                            <div class="outer">
+                                    <div class="middle">
+                                      <div class="inner">
+                                            <img src="../images/logo.png" class="img-thumbnail" id="logo" alt="Logo">
+                                            <form>
+                                            <div class="form-group">
+                                                <label for="txtEmail">Email address</label>
+                                                <input type="email" class="form-control" id="txtEmail" placeholder="Enter email">
                                             </div>
-                                            <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="userType" id="userType2" value="option2">
-                                            <label class="form-check-label" for="userType2">
-                                                Super User
-                                            </label>
+                                            <div class="form-group">
+                                                <label for="txtPassword">Password</label>
+                                                <input type="password" class="form-control" id="txtPassword" placeholder="Password">
                                             </div>
+                                            <div class="form-group">
+                                                <label for="txtName">Name</label>
+                                                <input type="text" class="form-control" id="txtName" placeholder="Name">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="txtAddress">Address</label>
+                                                <input type="text" class="form-control" id="txtAddress" placeholder="Address">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="phoneNumber">Phone Number</label>
+                                                <input type="tel" class="form-control" id="phoneNumber" placeholder="Phone Number">
+                                            </div>
+                                            <div class="form-group" id="userSelection">
+                                                <label for="userType">User Type</label>
+                                                <div class="form-check" id="userType">
+                                                    <input class="form-check-input" type="radio" name="userType" id="userType1" value="option1" checked>
+                                                    <label class="form-check-label" for="userType1">
+                                                       Basic User
+                                                    </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="userType" id="userType2" value="option2">
+                                                    <label class="form-check-label" for="userType2">
+                                                        Super User
+                                                    </label>
+                                                    </div>
+                                            </div>
+                                            <div class="form-group">
+                                                    <label for="organization">Organization</label>
+                                                    <input type="tel" class="form-control" id="organization" placeholder="Organization">
+                                                </div>
+                                            <button type="button" class="btn btn-primary" id="btnAuth">Login</button>
+                                            <div style="display: flex; justify-content: flex-end">
+                                                <button type="button" class="btn btn-link" id="btnAuthAlter">Dont have an account yet, Click here to register!</button>
+                                            </div>
+                                            </form>
                                     </div>
-                                    <div class="form-group">
-                                            <label for="organization">Organization</label>
-                                            <input type="tel" class="form-control" id="organization" placeholder="Organization">
-                                        </div>
-                                    <button type="button" class="btn btn-primary" id="btnAuth">Login</button>
-                                    <div style="display: flex; justify-content: flex-end">
-                                        <button type="button" class="btn btn-link" id="btnAuthAlter">Dont have an account yet, Click here to register!</button>
-                                    </div>
-                                    </form>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="container" id= "insidePage">
-
-                        <ul class="nav nav-tabs" id="myTab" role="tablist">
-                            <li class="nav-item">
-                            <a class="nav-link active" id="boards-tab" data-toggle="tab" href="#Boards" role="tab" aria-controls="Boards" aria-selected="true">Boards</a>
-                            </li>
-                            <li class="nav-item">
-                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#Profile" role="tab" aria-controls="Profile" aria-selected="false">Profile</a>
-                            </li>
-                            <li class="nav-item">
-                            <a class="nav-link" id="about-tab" data-toggle="tab" href="#About" role="tab" aria-controls="About" aria-selected="false">About us</a>
-                            </li>
-                            <li class="nav-item">
-                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#Career" role="tab" aria-controls="Career" aria-selected="false">Contact</a>
-                            </li>
-                        </ul>
-
-                        <div class="tab-content">
-                                <div class="tab-pane active" id="Boards" role="tabpanel" aria-labelledby="boards-tab">
+                        <div class="container" id= "insidePage">
+        
+                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                    <li class="nav-item">
+                                    <a class="nav-link active" id="boards-tab" data-toggle="tab" href="#Boards" role="tab" aria-controls="Boards" aria-selected="true">Boards</a>
+                                    </li>
+                                    <li class="nav-item">
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#Profile" role="tab" aria-controls="Profile" aria-selected="false">Profile</a>
+                                    </li>
+                                    <li class="nav-item">
+                                    <a class="nav-link" id="about-tab" data-toggle="tab" href="#About" role="tab" aria-controls="About" aria-selected="false">About us</a>
+                                    </li>
+                                    <li class="nav-item">
+                                    <a class="nav-link" id="career-tab" data-toggle="tab" href="#Career" role="tab" aria-controls="Career" aria-selected="false">Contact</a>
+                                    </li>
+                                </ul>
+        
+                                <div class="tab-content">
+                                        <div class="tab-pane active" id="Boards" role="tabpanel" aria-labelledby="boards-tab">
+                                                <p>
+                                                    <button class="btn btn-primary new-table-btn" type="button" data-toggle="collapse" data-target="#newTeam" aria-expanded="false" aria-controls="newTeam" id="NTB" >
+                                                        New Team
+                                                    </button>
+                                                </p>
+                                                <div class="collapse new-table-input" id="newTeam" >
+                                                    <div class="card card-body">
+                                                        <div class="input-group mb-3">
+                                                            <input type="text" class="form-control" placeholder="Enter Team name" aria-label="Team Name" id="teamName">
+                                                            <input type="text" class="form-control" placeholder="Enter Affiliation" aria-label="Affiliation" id="affiliation">
+                                                            <input type="text" class="form-control" placeholder="Enter a Unique Key to Access the Team" aria-label="Team Key" id="teamKey">
+                                                            <button type="button" class="btn btn-success" id="submitTeam">Create</button>
+                                                        </div>                           
+                                                    </div>
+                                                </div>
+                            
+                                                <div class="accordion" id="accordionTeams">
+                                                </div>
+        
+                                                <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="addModal">
+                                                  <div class="modal-dialog modal-xl">
+                                                    <div class="modal-content">
+                                                      <div class="card">
+                                                          <form id="boardForm">
+                                                              <div class="form-row">
+                                                                <div class="col-md-4 mb-3">
+                                                                  <label for="inputBName">Board Name</label>
+                                                                  <input type="text" class="form-control" id="inputBName" placeholder="Board Name" required>
+                                                                </div>
+                                                                <div class="col-md-4 mb-3">
+                                                                    <label for="inputReqs">Requirements</label>
+                                                                    <div class="input-group">
+                                                                        <input type="text" class="form-control" id="inputReqs" required>
+                                                                    </div>             
+                                                                  </div>
+                                                                <div class="col-md-4 mb-3">
+                                                                  <label for="inputDesc">Description</label>
+                                                                  <input type="text" class="form-control" id="inputDesc" placeholder="Description" required>
+                                                                </div>
+                                                                
+                                                              </div>
+                                                              <div class="form-row">
+                                                                <div class="col-md-4 mb-3">
+                                                                  <label for="inputColor">Color</label>
+                                                                  <input type="color" class="form-control" id="inputColor">
+                                                                </div>
+                                                                
+                                                                <div class="col-md-4 mb-3">
+                                                                    <label for="inputPriority">Priority</label>
+                                                                    <div class="input-group">
+                                                                      <input type="number" class="form-control" id="inputPriority" placeholder="Priority" required>
+                                                                    </div>
+                                                                  </div>
+                                                                <div class="col-md-4 mb-3">
+                                                                  <label for="inputET">Estimated Time</label>
+                                                                  <div class="input-group">
+                                                                      <input type="date" class="form-control" id="inputET" required>
+                                                                  </div>              
+                                                                </div>
+                                                              </div>
+                                                              <button type="button"  class="btn btn-primary" id="submitBoard">Create Board</button>
+                                                            </form>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                        </div>
+                                        <div class="tab-pane" id="Profile" role="tabpanel" aria-labelledby="profile-tab">
+                                            <div class="wrapper fade-in">
+                                            <h1>Profile </h1> <br>
+                                            <div class="tab">
+                                                <button class="tablinks" onclick="openElement(event, 'BasicInfo')" id="defaultOpen">Basic Info</button>
+                                                <button class="tablinks" onclick="openElement(event, 'Statistics')">Statistics</button>
+                                                <button class="tablinks" onclick="openElement(event, 'ect')">ect</button>
+                                            </div>
+                                            
+                                              <div id="BasicInfo" class="tabcontent">
+                                                <h3>Basic Info</h3>
+                                                <p>Name: Ali</p>
+                                                <p>Surname: Ali</p>
+                                                <p>Company: Ali</p>
+                                              </div>
+                                              
+                                              <div id="Statistics" class="tabcontent">
+                                                <h3>Statistics</h3>
+                                                <p>Project finish rate: 89%</p>
+                                                <p>Project finish rate before deadline: 11%</p> 
+                                                <p>Coments per project: 54%</p> 
+                                              </div>
+                                              
+                                              <div id="ect" class="tabcontent">
+                                                <h3>other info we can add</h3>
+                                                <p>Idk what we can add but we should add it here.</p>
+                                              </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane" id="About" role="tabpanel" aria-labelledby="about-tab">
+                                          <div class="wrapper fade-in">
+                                            <div class="container2">
+                                            <div class="header">
+                                                <h1>Our SuperCool Team</h1>
+                                            </div>
+                                            <br><br>
+                                            <div class="row">
+                                                <div class="column">
+                                                  <div class="card">
+                                                    <img src="../images/naisila.jpeg" alt="Naisila" style="width:100%">
+                                                    <div class="container">
+                                                      <h2>Naisila Puka</h2>
+                                                      <p class="title">Back End Developer</p>
+                                                      <p>naisila.puka@ug.bilkent.edu.tr</p>
+                                                      <p><button class="button">Contact</button></p>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="column">
+                                                  <div class="card">
+                                                    <img src="../images/alemdar.jpeg" alt="Alemdar" style="width:100%">
+                                                    <div class="container">
+                                                      <h2>Alemdar Salmoor</h2>
+                                                      <p class="title">Full Stack Developer.</p>
+                                                      <p> alemdar.salmoor@bilkent.edu.tr</p>
+                                                      <p><button class="button">Contact</button></p>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="column">
+                                                    <div class="card">
+                                                      <img src="../images/fatbardh.png" alt="Fatbardh" style="width: 100%">
+                                                      <div class="container">
+                                                        <h2>Fatbardh Feta</h2>
+                                                        <p class="title"> Front End Developer.</p>
+                                                        <p> fatbardh.feta@bilkent.edu.tr</p>
+                                                        <p><button class="button">Contact</button></p>
+                                                      </div>
+                                                    </div>
+                                                </div>
+                                                <div class="column">
+                                                  <div class="card">
+                                                    <img src="../images/kunduz.jpeg" alt="Kunduz" style="width:100%">
+                                                    <div class="container">
+                                                      <h2>Kunduz Efronova</h2>
+                                                      <p class="title">Back End Developer</p>
+                                                      <p>kunduz.efranova@bilkent.edu.tr</p>
+                                                      <p><button class="button">Contact</button></p>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <br>
+                                        <h1>Uptown FANK</h1>
                                         <p>
-                                            <button class="btn btn-primary new-table-btn" type="button" data-toggle="collapse" data-target="#newTeam" aria-expanded="false" aria-controls="newTeam" id="NTB" >
-                                                New Team
-                                            </button>
+                                            UpTownFank provides a complete and effective project management system for
+                                            large teams.It is a revolution for maintaining project
+                                            communication and keeping track of the accomplished and to-do tasks.
+                                            Each project has boards where lists can be added and seen by all the
+                                            team members. Lists hold a group of cards that are related to each other by their
+                                            content. Users can navigate to each of the lists of the project boards and mark as
+                                            “Completed” any of the cards in that list. Cards can also have labels, attachments,
+                                            deadlines or comments.
+                                            Our system provides support for two type of users, SuperUser and BasicUser.
+                                            Both of these users will firstly register to the system by providing basic information
+                                            like their name, age, address, phone number, e-mail address, username and password.
+                                            When a costumer wants to register as a SuperUser they just have to sing in using
+                                            the Create SuperUser button and provide information regarding their professional
+                                            background like the company name/university etc. Then they can create teams,
+                                            projects and boards, lists and cards as well as delete any of the entities mentioned
+                                            above. BasicUsers need to have an invitation code, or team key, in order to be
+                                            part of a team. When the BasicUser gets the invitation code from the SuperUser
+                                            then they can be added to the team created by the SuperUser, navigate through
+                                            the project board of their team, check out the lists and cards posted there, mark
+                                            the cards that they have completed or even add comments to Cards. BasicUsers do
+                                            not have the privilege to edit any of the project boards or lists that they can access.
+                                            When a BasicUser is removed from a team they can no longer access the team’s
+                                            boards.
                                         </p>
-                                        <div class="collapse new-table-input" id="newTeam" >
-                                            <div class="card card-body">
-                                                <div class="input-group mb-3">
-                                                    <input type="text" class="form-control" placeholder="Enter Team name" aria-label="Team Name" id="teamName">
-                                                    <input type="text" class="form-control" placeholder="Enter Affiliation" aria-label="Affiliation" id="affiliation">
-                                                    <input type="text" class="form-control" placeholder="Enter a Unique Key to Access the Team" aria-label="Team Key" id="teamKey">
-                                                    <button type="button" class="btn btn-success" id="submitTeam">Create</button>
-                                                </div>                           
-                                            </div>
                                         </div>
-                    
-                                        <div class="accordion" id="accordionTeams">
+                                        <div class="tab-pane" id="Career" role="tabpanel" aria-labelledby="career-tab">
+                                          <div class="wrapper fade-in">
+                                              <div class="header">
+                                                  <h1>You can find us online:</h1>
+                                                  Download the source code at: <a href>https://github.com/NaisilaPuka/UptownFANK</a>
+                                                  <p>And dont forget to follow us and star our repository on GitHub !!! :)</p>
+                                              </div>
+                                              <br>
+                                              <h1>Leave a mesage for us below:</h1>
+                                               <p>Please sent us your question and opinions. We may answer them sometimes ...</p>
+                                            <div>
+                                            <div class="container3">
+                                                <form action="/action_page.php">
+                                                  <label for="fname">First Name</label>
+                                                  <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                                              
+                                                  <label for="lname">Last Name</label>
+                                                  <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                                              
+                                                  <label for="country">Country</label>
+                                                  <select id="country" name="country">
+                                                    <option value="australia">North Corea</option>
+                                                    <option value="canada">Turkey</option>
+                                                    <option value="usa">USA</option>
+                                                    <option value="australia">Albania</option>
+                                                    <option value="canada">Spain</option>
+                                                    <option value="usa">other</option>
+                                                  </select>
+                                              
+                                                  <label for="subject">Subject</label>
+                                                  <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                                              
+                                                  <input type="submit" value="Submit">
+                                                </form>
+                                              </div>
                                         </div>
+                                        
+                                </div>
+        
+                        </div>
+            </div>
+            </div>
+            </div>
 
-                                        <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="addModal">
-                                          <div class="modal-dialog modal-xl">
-                                            <div class="modal-content">
-                                              <div class="card">
-                                                  <form id="menuItemUpdateForm">
-                                                      <div class="form-row">
-                                                        <div class="col-md-4 mb-3">
-                                                          <label for="inputBName">Board Name</label>
-                                                          <input type="text" class="form-control" id="inputBName" placeholder="Board Name" required>
-                                                        </div>
-                                                        <div class="col-md-4 mb-3">
-                                                            <label for="inputReqs">Requirements</label>
-                                                            <div class="input-group">
-                                                                <input type="text" class="form-control" id="inputReqs" required>
-                                                            </div>             
-                                                          </div>
-                                                        <div class="col-md-4 mb-3">
-                                                          <label for="inputDesc">Description</label>
-                                                          <input type="text" class="form-control" id="inputDesc" placeholder="Description" required>
-                                                        </div>
-                                                        
-                                                      </div>
-                                                      <div class="form-row">
-                                                        <div class="col-md-4 mb-3">
-                                                          <label for="inputColor">Color</label>
-                                                          <input type="color" class="form-control" id="inputColor" required>
-                                                        </div>
-                                                        
-                                                        <div class="col-md-4 mb-3">
-                                                            <label for="inputPriority">Priority</label>
-                                                            <div class="input-group">
-                                                              <input type="number" class="form-control" id="inputPriority" placeholder="Priority" required>
-                                                            </div>
-                                                          </div>
-                                                        <div class="col-md-4 mb-3">
-                                                          <label for="inputET">Estimated Time</label>
-                                                          <div class="input-group">
-                                                              <input type="date" class="form-control" id="inputET" aria-describedby="inputGroupPrepend4U" required>
-                                                          </div>              
-                                                        </div>
-                                                      </div>
-                                                      <button type="button"  class="btn btn-primary" id="submitBoard">Create Board</button>
-                                                    </form>
-                                              </div>
-                                            </div>
+            <div class="container-fluid" id="boardPage">
+
+                    <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="listModal">
+                            <div class="modal-dialog modal-xl">
+                              <div class="modal-content">
+                                <div class="card">
+                                    <form id="listForm">
+                                        <div class="form-row">
+                                          <div class="col-md-4 mb-3">
+                                            <label for="inputBName">List Name</label>
+                                            <input type="text" class="form-control" id="inputLName" placeholder="List Name" required>
                                           </div>
+                                          
                                         </div>
+                                        <button type="button"  class="btn btn-primary" id="submitList">Create List</button>
+                                      </form>
                                 </div>
-                                <div class="tab-pane" id="Profile" role="tabpanel" aria-labelledby="profile-tab">
-                                    <div class="wrapper fade-in">
-                                    <h1>Profile </h1> <br>
-                                    <div class="tab">
-                                        <button class="tablinks" onclick="openElement(event, 'BasicInfo')" id="defaultOpen">Basic Info</button>
-                                        <button class="tablinks" onclick="openElement(event, 'Statistics')">Statistics</button>
-                                        <button class="tablinks" onclick="openElement(event, 'ect')">ect</button>
-                                    </div>
-                                    
-                                      <div id="BasicInfo" class="tabcontent">
-                                        <h3>Basic Info</h3>
-                                        <p>Name: Ali</p>
-                                        <p>Surname: Ali</p>
-                                        <p>Company: Ali</p>
-                                      </div>
-                                      
-                                      <div id="Statistics" class="tabcontent">
-                                        <h3>Statistics</h3>
-                                        <p>Project finish rate: 89%</p>
-                                        <p>Project finish rate before deadline: 11%</p> 
-                                        <p>Coments per project: 54%</p> 
-                                      </div>
-                                      
-                                      <div id="ect" class="tabcontent">
-                                        <h3>other info we can add</h3>
-                                        <p>Idk what we can add but we should add it here.</p>
-                                      </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane" id="About" role="tabpanel" aria-labelledby="about-tab">
-                                  <div class="wrapper fade-in">
-                                    <div class="container2">
-                                    <div class="header">
-                                        <h1>Our SuperCool Team</h1>
-                                    </div>
-                                    <br><br>
-                                    <div class="row">
-                                        <div class="column">
-                                          <div class="card">
-                                            <img src="../images/naisila.jpeg" alt="Naisila" style="width:100%">
-                                            <div class="container">
-                                              <h2>Naisila Puka</h2>
-                                              <p class="title">Back End Developer</p>
-                                              <p>naisila.puka@ug.bilkent.edu.tr</p>
-                                              <p><button class="button">Contact</button></p>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div class="column">
-                                          <div class="card">
-                                            <img src="../images/alemdar.jpeg" alt="Alemdar" style="width:100%">
-                                            <div class="container">
-                                              <h2>Alemdar Salmoor</h2>
-                                              <p class="title">Full Stack Developer.</p>
-                                              <p> alemdar.salmoor@bilkent.edu.tr</p>
-                                              <p><button class="button">Contact</button></p>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div class="column">
-                                            <div class="card">
-                                              <img src="../images/fatbardh.png" alt="Fatbardh" style="width: 100%">
-                                              <div class="container">
-                                                <h2>Fatbardh Feta</h2>
-                                                <p class="title"> Front End Developer.</p>
-                                                <p> fatbardh.feta@bilkent.edu.tr</p>
-                                                <p><button class="button">Contact</button></p>
+                              </div>
+                            </div>
+                            
+                          </div>
+                          <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="cardModal">
+                                <div class="modal-dialog modal-lg">
+                                  <div class="modal-content">
+                                    <div class="card">
+                                        <form id="cardForm">
+                                            <div class="form-row">
+                                              <div class="col-md-4 mb-3">
+                                                <label for="inputCName">Card Name</label>
+                                                <input type="text" class="form-control" id="inputCName" placeholder="Card Name" required>
                                               </div>
+                                              <div class="col-md-4 mb-3">
+                                                    <label for="inputCDesc">Description</label>
+                                                    <input type="text" class="form-control" id="inputCDesc" placeholder="Description" required>
+                                                </div>
+                                              
+
                                             </div>
-                                        </div>
-                                        <div class="column">
-                                          <div class="card">
-                                            <img src="../images/kunduz.jpeg" alt="Kunduz" style="width:100%">
-                                            <div class="container">
-                                              <h2>Kunduz Efronova</h2>
-                                              <p class="title">Back End Developer</p>
-                                              <p>kunduz.efranova@bilkent.edu.tr</p>
-                                              <p><button class="button">Contact</button></p>
+                                            <div class="form-row">
+                                                
+                                                <div class="col-md-4 mb-3">
+                                                        <label for="inputCPriority">Priority</label>
+                                                        <div class="input-group">
+                                                          <input type="number" class="form-control" id="inputCPriority" placeholder="Priority" required>
+                                                        </div>
+                                                      </div>
+                                                <div class="col-md-4 mb-3">
+                                                    <label for="inputDD">Due Date</label>
+                                                    <div class="input-group">
+                                                        <input type="date" class="form-control" id="inputDD" required>
+                                                    </div>              
+                                                    </div>
+
+                                                
+
                                             </div>
-                                          </div>
-                                        </div>
+                                            <button type="button"  class="btn btn-primary" id="submitCard">Create Card</button>
+                                          </form>
                                     </div>
                                   </div>
-                                </div>
-                                <br>
-                                <h1>Uptown FANK</h1>
-                                <p>
-                                    UpTownFank provides a complete and effective project management system for
-                                    large teams.It is a revolution for maintaining project
-                                    communication and keeping track of the accomplished and to-do tasks.
-                                    Each project has boards where lists can be added and seen by all the
-                                    team members. Lists hold a group of cards that are related to each other by their
-                                    content. Users can navigate to each of the lists of the project boards and mark as
-                                    “Completed” any of the cards in that list. Cards can also have labels, attachments,
-                                    deadlines or comments.
-                                    Our system provides support for two type of users, SuperUser and BasicUser.
-                                    Both of these users will firstly register to the system by providing basic information
-                                    like their name, age, address, phone number, e-mail address, username and password.
-                                    When a costumer wants to register as a SuperUser they just have to sing in using
-                                    the Create SuperUser button and provide information regarding their professional
-                                    background like the company name/university etc. Then they can create teams,
-                                    projects and boards, lists and cards as well as delete any of the entities mentioned
-                                    above. BasicUsers need to have an invitation code, or team key, in order to be
-                                    part of a team. When the BasicUser gets the invitation code from the SuperUser
-                                    then they can be added to the team created by the SuperUser, navigate through
-                                    the project board of their team, check out the lists and cards posted there, mark
-                                    the cards that they have completed or even add comments to Cards. BasicUsers do
-                                    not have the privilege to edit any of the project boards or lists that they can access.
-                                    When a BasicUser is removed from a team they can no longer access the team’s
-                                    boards.
-                                </p>
-                                </div>
-                                <div class="tab-pane" id="Career" role="tabpanel" aria-labelledby="career-tab">
-                                  <div class="wrapper fade-in">
-                                      <div class="header">
-                                          <h1>You can find us online:</h1>
-                                          Download the source code at: <a href>https://github.com/NaisilaPuka/UptownFANK</a>
-                                          <p>And dont forget to follow us and star our repository on GitHub !!! :)</p>
-                                      </div>
-                                      <br>
-                                      <h1>Leave a mesage for us below:</h1>
-                                       <p>Please sent us your question and opinions. We may answer them sometimes ...</p>
-                                    <div>
-                                    <div class="container3">
-                                        <form action="/action_page.php">
-                                          <label for="fname">First Name</label>
-                                          <input type="text" id="fname" name="firstname" placeholder="Your name..">
-                                      
-                                          <label for="lname">Last Name</label>
-                                          <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-                                      
-                                          <label for="country">Country</label>
-                                          <select id="country" name="country">
-                                            <option value="australia">North Corea</option>
-                                            <option value="canada">Turkey</option>
-                                            <option value="usa">USA</option>
-                                            <option value="australia">Albania</option>
-                                            <option value="canada">Spain</option>
-                                            <option value="usa">other</option>
-                                          </select>
-                                      
-                                          <label for="subject">Subject</label>
-                                          <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-                                      
-                                          <input type="submit" value="Submit">
-                                        </form>
-                                      </div>
-                                </div>
-                                
-                        </div>
+                                </div>    
+                            </div>
+                            
+                
+            </div>
 
-                </div>
     </div>
+    
+
 
     <!--For Bootstrap-->
     <script
