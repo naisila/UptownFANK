@@ -15,6 +15,7 @@
   $userId = (string) $userId;
 
   $reg_query = "SELECT T.teamID, T.name, T.affiliation, T.supervisor,( CASE WHEN T.supervisor = '$userId' THEN 'True' ELSE 'False' END) AS isSupervisor FROM Team T JOIN Member M ON (T.teamID = M.teamID) WHERE M.userID = '$userId';";
+  
   $return_arr = array();
 
   if(mysqli_query($conn, $reg_query))
@@ -31,7 +32,7 @@
       $row_array = json_encode($row_array);
       array_push($return_arr, $row_array);
     }
-    $result->data = $return_arr;
+    $result->data = $row_array;
   }
   else
   {
