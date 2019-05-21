@@ -9,12 +9,17 @@
 
   //Give me inputs as in these POST functions
   //-----------
-  $userId = $_POST['userId'];
+  $email = $_POST['email'];
   $teamId = $_POST['teamId'];
   //-----------
 
-  $userId = (string) $userId;
+  $email = (string) $email;
   $teamId = (string) $teamId;
+
+  $reg_query = "SELECT userID FROM BasicUser WHERE email = '$email';";
+  $res = mysqli_query($conn, $reg_query);
+
+  $userId = $res->fetch_assoc()["userID"];
 
   $reg_query = "INSERT INTO Member(userID, teamID) VALUES('$userId', '$teamId');";
 

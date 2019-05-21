@@ -81,6 +81,9 @@
                                     <li class="nav-item">
                                     <a class="nav-link" id="career-tab" data-toggle="tab" href="#Career" role="tab" aria-controls="Career" aria-selected="false">Contact</a>
                                     </li>
+                                    <li class="nav-item">
+                                    <a class="nav-link" id="reports-tab" data-toggle="tab" href="#Reports" role="tab" aria-controls="Reports" aria-selected="false">Reports</a>
+                                    </li>
                                 </ul>
         
                                 <div class="tab-content">
@@ -263,6 +266,32 @@
                                             When a BasicUser is removed from a team they can no longer access the team’s
                                             boards.
                                         </p>
+                                        </div>
+                                        <div class="tab-pane" id="Reports" role="tabpanel" aria-labelledby="reports-tab">
+                                          <div class="wrapper fade-in">
+                                            <?php
+                                              include('utils/config.php');
+
+                                              $result = mysqli_query($conn,"WITH membersNo AS(SELECT teamID, COUNT(userID) as memberCount FROM Member GROUP BY teamID) SELECT t.name, t.supervisor, m.memberCount FROM Team t NATURAL JOIN membersNo m WHERE m.memberCount >= ALL (SELECT memberCount FROM membersNo);");
+
+                                              echo "<table border='1'>
+                                              <tr>
+                                              <th>Team Name</th>
+                                              <th>Team Supervisor</th>
+                                              <th>Number of Members</th>
+                                              </tr>";
+
+                                              while($row = mysqli_fetch_array($result))
+                                              {
+                                              echo "<tr>";
+                                              echo "<td>" . $row['name'] . "</td>";
+                                              echo "<td>" . $row['supervisor'] . "</td>";
+                                              echo "<td>" . $row['memberCount'] . "</td>";
+                                              echo "</tr>";
+                                              }
+                                              echo "</table>";
+                                            ?>    
+                                        </div>
                                         </div>
                                         <div class="tab-pane" id="Career" role="tabpanel" aria-labelledby="career-tab">
                                           <div class="wrapper fade-in">
