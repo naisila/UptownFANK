@@ -642,6 +642,41 @@ document.getElementById("submitCard").addEventListener("click", function() {
   
 })
 
+document.getElementById("updateUser").addEventListener("click", function() {
+
+    var userId = gUserId
+    var name = document.getElementById("inputNewName")
+    var address = document.getElementById("inputNewAddress")
+    var email = document.getElementById("inputNewEmail")
+
+
+
+    $.post("update_profile.php",
+    {userId: userId, name: name, address: address, email: email},
+    function(response){
+        pResponse = JSON.parse(response)
+        console.log(pResponse.status)
+        if(pResponse.status == "success"){
+            nameField.value = name
+            addressField.value = address
+            emailField = email
+        }
+        else{
+            alert("There was some error updating a User")
+        }
+    });
+
+    $("#inputCName").value = ""
+    $("#inputCPriority").value = ""
+    $("#inputCDesc").value = ""
+    $("#inputDD").value = ""
+  
+    $(gAddButton).trigger("click")
+  
+})
+
+
+
 function createActualCard(pResponse, name, priority, description, dueDate, finished, archived){
 
     var listItem = document.createElement("li")

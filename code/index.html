@@ -176,7 +176,7 @@
                                         </div>
                                         <div class="tab-pane" id="Profile" role="tabpanel" aria-labelledby="profile-tab">
                                             <div class="wrapper fade-in">
-                                            <h1>Profile </h1> <br>
+                                               <br>
                                             <form>
                                               <div class="form-group row">
                                                 <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
@@ -197,7 +197,40 @@
                                                 </div>
                                               </div>
                                             </form>
+                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#updateUserModal">
+                                                Update User Info
+                                              </button>
+
                                             </div>
+
+                                            <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="updateUserModal">
+                                                <div class="modal-dialog modal-xl">
+                                                  <div class="modal-content">
+                                                    <div class="card">
+                                                        <form id="boardForm">
+                                                            <div class="form-row">
+                                                              <div class="col-md-4 mb-3">
+                                                                <label for="inputNewName">New Name</label>
+                                                                <input type="text" class="form-control" id="inputNewName" required>
+                                                              </div>
+                                                              <div class="col-md-4 mb-3">
+                                                                  <label for="inputNewEmail">New Email</label>
+                                                                  <div class="input-group">
+                                                                      <input type="text" class="form-control" id="inputNewEmail" required>
+                                                                  </div>             
+                                                                </div>
+                                                              <div class="col-md-4 mb-3">
+                                                                <label for="inputNewAddress">New Address</label>
+                                                                <input type="text" class="form-control" id="inputNewAddress"  required>
+                                                              </div>
+                                                              
+                                                            </div>
+                                                            <button type="button"  class="btn btn-primary" id="updateUser">Update</button>
+                                                          </form>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
                                         </div>
                                         <div class="tab-pane" id="About" role="tabpanel" aria-labelledby="about-tab">
                                           <div class="wrapper fade-in">
