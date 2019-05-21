@@ -1,15 +1,18 @@
 <?php
 
-                                              include('utils/config.php');
+    include('utils/config.php');
 
-                                              $result = mysqli_query($conn,'WITH membersNo AS(SELECT teamID, COUNT(userID) as memberCount FROM Member GROUP BY teamID) SELECT t.name, t.supervisor, m.memberCount FROM Team t NATURAL JOIN membersNo m WHERE m.memberCount >= ALL (SELECT memberCount FROM membersNo);');
+    mysqli_query($conn, 'DROP TABLE IF EXISTS membersNo;');
+    mysqli_query($conn, 'CREATE TABLE membersNo AS SELECT teamID, COUNT(userID) as memberCount FROM Member GROUP BY teamID;');
 
-                                              echo '<table border='1'>
-                                              <tr>
-                                              <th>Team Name</th>
-                                              <th>Team Supervisor</th>
-                                              <th>Number of Members</th>
-                                              </tr>';
+    $result = mysqli_query($conn,'SELECT t.name, B.name as supervisor, m.memberCount FROM Team t NATURAL JOIN membersNo m JOIN BasicUser B ON B.userID = t.supervisor WHERE m.memberCount >= ALL (SELECT memberCount FROM membersNo);');
+
+    echo '<table border="1">
+        <tr>
+          <th>Team Name</th>
+          <th>Team Supervisor</th>
+        <th>Number of Members</th>
+        </tr>';
 
                                               while($row = mysqli_fetch_array($result))
                                               {
@@ -20,4 +23,4 @@
                                               echo '</tr>';
                                               }
                                               echo '</table>';
-?>    
+?>

@@ -17,6 +17,8 @@ const affiliation = document.getElementById("affiliation")
 const teamKey = document.getElementById("teamKey")
 const mainMenu = document.getElementById("mainMenu")
 const boardPage = document.getElementById("boardPage")
+const baordModal = document.getElementById("cardModal")
+const listModal = document.getElementById("listModal")
 
 
 const registerMsg = "Dont have an account yet, Click here to register!"
@@ -120,6 +122,7 @@ btnAuth.addEventListener("click", function(e) {
                     hideLoginPage()
                     gUserId = pResponse.userID
                     alert("Successfully registered")
+                    getReports()
                 }
                 else{
                     alert("There was some error with Register")
@@ -141,6 +144,7 @@ btnAuth.addEventListener("click", function(e) {
                     gUserId = pResponse.userID
                     getTeams(pResponse.userID)
                     alert("Successfully logged in")
+                    getReports()
                 }
                 else{
                     alert("There was some error with Login")
@@ -412,17 +416,20 @@ function populateBoard(boardId ,name, color){
     var backButton = getBackButton()
 
     backButton.addEventListener("click", function(){
-         
 
+        var child1 = baordModal
+        var child2 = listModal
+         
         showMainMenu()
-        while (board.hasChildNodes()) {
-            board.removeChild(board.lastChild);
+        while (boardPage.hasChildNodes()) {
+            boardPage.removeChild(boardPage.lastChild);
         }
-        gBoard.removeChild(board)
+
+        boardPage.append(child1, child2)
     })
 
 
-    board.append(backButton, button)
+    board.append(button, backButton)
 
     gBoard = board
 
@@ -575,11 +582,7 @@ function createListCard(name, response){
 
     column.append(cardWrapper)
 
-    var child = gBoard.lastChild
-    gBoard.removeChild(child)
-
-    gBoard.append(column)
-    gBoard.append(child)
+    gBoard.prepend(column)
     
 }
 
@@ -668,4 +671,13 @@ function deleteNode(nodeId){
     var node = document.getElementById(nodeId)
     var parent = node.parentNode
     parent.removeChild(node)
+}
+
+function getReports(){
+    $.post("reports.php",
+    {},
+    function(response){
+        var doc = document.getElementById("reportInside")
+        doc.innerHTML = response
+    });
 }
