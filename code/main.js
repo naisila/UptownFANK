@@ -139,7 +139,7 @@ btnAuth.addEventListener("click", function(e) {
                 if(pResponse.status == "success"){
                     hideLoginPage()
                     gUserId = pResponse.userID
-                    getTeams(gUserId)
+                    getTeams(pResponse.userID)
                     alert("Successfully logged in")
                 }
                 else{
