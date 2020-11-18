@@ -3,7 +3,7 @@ UptownFANK is a project tracking software created as a database application. It 
 
 ## Team
 * [Alemdar Salmoor](https://github.com/LiemPei)
-* [Naisila Puka](https://github.com/NaisilaPuka)
+* [Naisila Puka](https://github.com/naisila)
 * [Fatbardh Feta](https://github.com/fatbardhfeta)
 * [Kunduz Efronova](https://github.com/efronova)
 
